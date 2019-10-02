@@ -35,13 +35,13 @@ pack_readme <- function(github_user = NULL,
 
   url_ref <- sprintf('https://github.com/%s/%s', github_user, pkg_name)
 
-  travis_badge <- sprintf("[![Travis build status](https://travis-ci.org/%s/%s.svg?branch=master)](https://travis-ci.org/%s/%s",
+  travis_badge <- sprintf("[![Travis build status](https://travis-ci.org/%s/%s.svg?branch=master)](https://travis-ci.org/%s/%s)",
                           github_user,
                           pkg_name,
                           github_user,
                           pkg_name
                           )
-  codecov_badge <- sprintf("[![codecov](https://codecov.io/gh/%s/%s/branch/master/graph/badge.svg)](https://codecov.io/gh/%s/%s",
+  codecov_badge <- sprintf("[![codecov](https://codecov.io/gh/%s/%s/branch/master/graph/badge.svg)](https://codecov.io/gh/%s/%s)",
                           github_user,
                           pkg_name,
                           github_user,
@@ -55,7 +55,7 @@ pack_readme <- function(github_user = NULL,
 %s
 %s
 
-The goal of %s is to ...
+%s is to ...
 
 ## Installation
 
