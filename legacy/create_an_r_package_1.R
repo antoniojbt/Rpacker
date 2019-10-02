@@ -137,19 +137,26 @@ usethis::create_package(fields = desc_fields,
 # man # not created in new version, empty before
 # pkg_name.Rproj # not if rstudio = FALSE
 
-# Add files to ignore when building the package, use Perl regex:
-text_ignore <- c("^\\.dir_bash_history$",
-								 "^R/\\.dir_bash_history$",
-								 "^man/\\.dir_bash_history$",
-								 "^tests/\\.dir_bash_history$",
-								 "^tests/testthat/\\.dir_bash_history$",
-								 "^vignettes/\\.dir_bash_history$",
-                 "^\\.lintr$" # if using lintr: https://github.com/jimhester/lintr
-								 )
+# Add files to ignore when building the package, use Perl regex, needs double
+# "\\" escapes:
+text_ignore <- c("^\\.travis\\.yml$",
+								 "^\\.*history$",
+								 "^R/\\.*history$",
+								 "^man/\\.*history$",
+								 "^tests/\\.*history$",
+								 "^tests/testthat/\\.*history$",
+								 "^vignettes/\\.*history$",
+                 "^\\.lintr$", # if using lintr: https://github.com/jimhester/lintr
+                 "^data-raw$",
+                 "^LICENSE\\.md$",
+                 "^Meta$",
+                 "^CRAN-RELEASE$"
+                 )
+
 # Run once and modify as needed:
 write(text_ignore,
 			file = sprintf('%s/.Rbuildignore', pkg_name),
-			append = TRUE)
+			append = FALSE)
 
 # Add a licence:
 usethis::use_gpl3_license(name = author) # run once
