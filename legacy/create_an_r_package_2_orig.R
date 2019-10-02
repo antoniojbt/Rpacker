@@ -12,7 +12,6 @@
 # Package's directory:
 # setwd('/Users/antoniob/Documents/github.dir/AntonioJBT/episcout')
 # setwd('/Users/antoniob/Documents/github.dir/EpiCompBio/bigimp/')
-# setwd('/Users/antoniob/Documents/github.dir/AntonioJBT/Rpacker/')
 ######################
 
 ######################
@@ -25,11 +24,12 @@ library(usethis) # create packages and functions more easily
 
 ######################
 # Setup a few variables:
-pkg_name <- 'Rpacker'# 'bigimp'
+pkg_name <- 'episcout'# 'bigimp'
 author <- 'Antonio J Berlanga-Taylor'
+# 'Antonio J Berlanga-Taylor, George Adams, Deborah Schneider-Luftman'
 # email <- 'some.name@@uni.ac.uk' # needs double @@ for roxygen docs
-github_user <- "AntonioJBT"
-url_ref <- sprintf('https://github.com/%s/%s', github_user, pkg_name)
+url_ref <- 'https://github.com/AntonioJBT/episcout'
+# 'https://github.com/EpiCompBio/bigimp'
 # Others for tests and functions are setup further below.
 ######################
 
@@ -178,10 +178,10 @@ text_to_add_functions <- function(function_name = '',
 %s <- function(param1 = some_default,
                ...
                ) {
-  # Use this instead or library or require inside functions:
-  if (!requireNamespace('some_pkg', quietly = TRUE)) {
-    stop('Package some_pkg needed for this function to work. Please install it.',
-         call. = FALSE)
+# Use this instead or library or require inside functions:
+if (!requireNamespace('some_pkg', quietly = TRUE)) {
+  stop('Package some_pkg needed for this function to work. Please install it.',
+  call. = FALSE)
   }
 if(param1 == TRUE) {
   print('something')
@@ -199,7 +199,7 @@ if(param1 == TRUE) {
 }
 
 # Write to template to file:
-function_name <- 'pack_codecov' # e.g. 'epi_clean_syntax_val'
+function_name <- 'pack_create' # e.g. 'epi_clean_syntax_val'
 file_name <- sprintf('R/%s.R', function_name)
 # Create and save to disk, this will be one function per file:
 if (!file.exists(file_name)) {

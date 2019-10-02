@@ -12,7 +12,10 @@ Encoding: UTF-8
 Language: en-GB
 LazyData: true
 Imports: 
-    devtools
+    devtools,
+    roxygen2,
+    usethis
 Suggests: 
     testthat,
     covr
+RoxygenNote: 6.1.1

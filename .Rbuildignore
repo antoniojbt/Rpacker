@@ -10,3 +10,5 @@
 ^LICENSE\.md$
 ^Meta$
 ^CRAN-RELEASE$
+^.*\.Rproj$
+^\.Rproj\.user$

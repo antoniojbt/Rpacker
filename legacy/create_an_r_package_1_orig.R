@@ -119,14 +119,6 @@ person <- sprintf('person(\"%s\", \"%s\",
                    role
                    )
 
-# For LICENCE:
-author <- sprintf('%s %s', first, last)
-
-# For README badges and others, assumes you are a GitHub user and that you're using travisCI
-# and codecov:
-github_user <- "AntonioJBT"
-url_ref <- sprintf('https://github.com/%s/%s', github_user, pkg_name)
-
 # Create field and pass as list:
 desc_fields <- list(`Authors@R` = person,
                       License = lic,
@@ -143,12 +135,21 @@ desc_fields <- list(`Authors@R` = person,
 # desc_fields
 # For authorship see for example:
 # https://journal.r-project.org/archive/2012-1/RJournal_2012-1_Hornik~et~al.pdf
+#####
 
+#####
+# For LICENCE:
+author <- sprintf('%s %s', first, last)
 
-# Others for tests and functions are setup further below.
+# For README badges and others, assumes you are a GitHub user and that you're using travisCI
+# and codecov:
+github_user <- "AntonioJBT"
+url_ref <- sprintf('https://github.com/%s/%s', github_user, pkg_name)
+#####
 ######################
 
 ######################
+#####
 # Create a package, run once:
 usethis::create_package(fields = desc_fields,
                         path = set_path,
@@ -165,6 +166,11 @@ usethis::create_package(fields = desc_fields,
 # man # not created in new version, empty before
 # pkg_name.Rproj # not if rstudio = FALSE
 
+# Add a licence:
+usethis::use_gpl3_license(name = author) # run once
+#####
+
+#####
 # Add files to ignore when building the package, use Perl regex, needs double
 # "\\" escapes:
 text_ignore <- c("^\\.travis\\.yml$",
@@ -185,10 +191,9 @@ text_ignore <- c("^\\.travis\\.yml$",
 write(text_ignore,
 			file = sprintf('%s/.Rbuildignore', pkg_name),
 			append = FALSE)
+#####
 
-# Add a licence:
-usethis::use_gpl3_license(name = author) # run once
-
+#####
 # Add suggestions for packages to load which are dependencies:
 # http://r-pkgs.had.co.nz/description.html#dependencies
 pkgs_imports <- c('devtools'
@@ -222,22 +227,13 @@ for (i in pkgs_sug) {
   }
 # Prefer 'Suggests' but use 'Imports' if many functions rely on it and you dont'
 # provide alternative functions
+#####
 
-
-# Add documentation to package
-# For LICENCE:
-author <- sprintf('%s %s', first, last)
-
-# For README badges and others, assumes you are a GitHub user and that you're using travisCI
-# and codecov:
-github_user <- "AntonioJBT"
-url_ref <- sprintf('https://github.com/%s/%s', github_user, pkg_name)
-
+#####
 # Run once and modify as needed:
 usethis::use_readme_md(open = FALSE) # creates a readme and opens it for editing
 
 # Add text to readme:
-
 travis_badge <- sprintf("[![Travis build status](https://travis-ci.org/%s/%s.svg?branch=master)](https://travis-ci.org/%s/%s",
                         github_user,
                         pkg_name,
@@ -325,6 +321,7 @@ Not released yet:
 write(text_readme,
 			file = sprintf('%s/README.md', pkg_name),
 			append = FALSE)
+#####
 ######################
 
 ######################
