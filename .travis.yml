@@ -13,44 +13,66 @@
 # https://github.com/travis-ci/travis-build/blob/master/lib/travis/build/script/r.rb
 #####
 
-
 language: R
 sudo: false
 cache: packages
 
-# r_packages
-# add dependencies here for testing, those in DESCRIPTION
-
-jobs:
-    include:
-        - r: release
-        # warnings_are_errors: false
-      # - os: osx
-      # - r: devel
-        - r: 3.4
-        - r: 3.5
+matrix:
+  fast_finish: true
+  include:
+# set vdiffr to false on all as frequently causes errors on travis but not locally
+  - r: devel
+    dist: trusty
+    warnings_are_errors: false
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  - r: release
+    dist: trusty
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  - r: 3.6
+    dist: trusty
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  - r: 3.5
+    dist: trusty
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  allow_failures: # getting warnings and cannot download on several osx
+# also set vdiffr to false on all
+  - r: devel
+    os: osx
+    warnings_are_errors: false
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  - r: release
+    os: osx
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  - r: 3.6
+    os: osx
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  - r: 3.5
+    os: osx
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
 
 r_packages:
     - covr
-    - data.table
-    - ggplot2
-    - cowplot
-    - mice
-    - VIM
-    - dplyr
-    - tibble
-    - parallel
-    - lattice
-    - svglite
+    - vdiffr
 
 r_binary_packages:
     - testthat
     - knitr
-
-# Add coverage testing:
-# https://covr.r-lib.org/
-#r_github_packages:
-#    - r-lib/covr
 
 after_success:
     - Rscript -e 'library(covr); covr::codecov()'

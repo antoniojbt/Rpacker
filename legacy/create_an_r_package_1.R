@@ -265,7 +265,6 @@ Not released yet:
 
 - Version 0.0.0.9000
   Development version
-"
 ',
   pkg_name,
   travis_badge,
@@ -434,6 +433,7 @@ for (i in pkgs_tests) {
 }
 
 # Add to travis template:
+# Add warning that packages from imports and suggests must be added manually
 travis_cat <- c("#####
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
@@ -449,52 +449,75 @@ travis_cat <- c("#####
 # https://github.com/travis-ci/travis-build/blob/master/lib/travis/build/script/r.rb
 #####
 
-
 language: R
 sudo: false
 cache: packages
 
-# r_packages
-# add dependencies here for testing, those in DESCRIPTION
-
-jobs:
-    include:
-        - r: release
-        # warnings_are_errors: false
-      # - os: osx
-      # - r: devel
-        - r: 3.4
-        - r: 3.5
+matrix:
+  fast_finish: true
+  include:
+# set vdiffr to false on all as frequently causes errors on travis but not locally
+  - r: devel
+    dist: trusty
+    warnings_are_errors: false
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  - r: release
+    dist: trusty
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  - r: 3.6
+    dist: trusty
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  - r: 3.5
+    dist: trusty
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  allow_failures: # getting warnings and cannot download on several osx
+# also set vdiffr to false on all
+  - r: devel
+    os: osx
+    warnings_are_errors: false
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  - r: release
+    os: osx
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  - r: 3.6
+    os: osx
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
+  - r: 3.5
+    os: osx
+    env:
+      - VDIFFR_RUN_TESTS=false
+      - _R_CHECK_SYSTEM_CLOCK_=false
 
 r_packages:
     - covr
-    - data.table
-    - ggplot2
-    - cowplot
-    - mice
-    - VIM
-    - dplyr
-    - tibble
-    - parallel
-    - lattice
-    - svglite
+    - vdiffr
 
 r_binary_packages:
     - testthat
     - knitr
 
-# Add coverage testing:
-# https://covr.r-lib.org/
-#r_github_packages:
-#    - r-lib/covr
-
 after_success:
     - Rscript -e 'library(covr); covr::codecov()'
-")
+"
+)
 
 write(travis_cat,
       file = sprintf('%s/.travis.yml', pkg_name),
-			append = TRUE)
+			append = FALSE)
 #####
 
 #####
@@ -503,8 +526,9 @@ write(travis_cat,
 # You need to have manually signed up to Travis-CI and codecov to change settings,
 # see coverage details, etc. See codecov:
 # https://github.com/r-lib/covr
-# Run git init first, then this:
+# Run git init first, then this:g
 usethis::use_coverage() # run once and follow instructions
+# Add comment that token might need to be added manually
 #####
 ######################
 
@@ -518,7 +542,7 @@ usethis::use_coverage() # run once and follow instructions
 
 ######################
 # If submitting to CRAN, track your efforts to comply:
-usethis::use_cran_comments(open = interactive())
+usethis::use_cran_comments(open = FALSE)
 # Add some text to the file created:
 write(
 	"There was 1 NOTE:
