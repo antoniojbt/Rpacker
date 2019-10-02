@@ -199,7 +199,7 @@ if(param1 == TRUE) {
 }
 
 # Write to template to file:
-function_name <- '' # e.g. 'epi_clean_syntax_val'
+function_name <- 'pack_create' # e.g. 'epi_clean_syntax_val'
 file_name <- sprintf('R/%s.R', function_name)
 # Create and save to disk, this will be one function per file:
 if (!file.exists(file_name)) {

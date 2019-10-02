@@ -95,29 +95,57 @@ library(usethis) # create packages and functions more easily
 # use a good name!
 # http://r-pkgs.had.co.nz/package.html#naming
 pkg_name <- 'Rpacker'
-path <- '~/Documents/github.dir/AntonioJBT'
+path <- '~/Documents/github.dir/AntonioJBT/'
+# path <- '/private/tmp'
+# path <- '/Users/antoniob/Desktop/Downloads_to_delete'
 set_path <- file.path(path, pkg_name)
 
 # Fields for DESCRIPTION:
-desc_fields <- list(`Authors@R` = 'person("Antonio J.", "Berlanga-Taylor",
-                                   email = "antoniojberlanga@gmail.com",
-                                   role = c("aut", "cre")
-                                   )',
-                    License = "GPL-3",
-                    Language =  "en-GB"
-                    )
-# For authorship see for example:
-# https://journal.r-project.org/archive/2012-1/RJournal_2012-1_Hornik~et~al.pdf
+first <- "Antonio J."
+last <- "Berlanga-Taylor"
+email <- "antoniojberlanga@gmail.com"
+role <- 'c("aut", "cre")'
+lic <- "GPL-3" # e.g. MIT, Apache2.0, CCBY4, etc. pass as literal string
+               # so can be anything
+lang <- "en-GB"
+
+person <- sprintf('person(\"%s\", \"%s\",
+                   email = \"%s\",
+                   role = %s
+                   )',
+                   first,
+                   last,
+                   email,
+                   role
+                   )
 
 # For LICENCE:
-author <- 'Antonio J Berlanga-Taylor'
-
-# Others for tests and functions are setup further below.
+author <- sprintf('%s %s', first, last)
 
 # For README badges and others, assumes you are a GitHub user and that you're using travisCI
 # and codecov:
 github_user <- "AntonioJBT"
 url_ref <- sprintf('https://github.com/%s/%s', github_user, pkg_name)
+
+# Create field and pass as list:
+desc_fields <- list(`Authors@R` = person,
+                      License = lic,
+                      Language = lang
+                      )
+# desc_fields2 <- list(`Authors@R` = 'person("Antonio J.", "Berlanga-Taylor",
+#                                    email = "antoniojberlanga@gmail.com",
+#                                    role = c("aut", "cre")
+#                                    )',
+#                     License = "GPL-3",
+#                     Language =  "en-GB"
+#                     )
+
+# desc_fields
+# For authorship see for example:
+# https://journal.r-project.org/archive/2012-1/RJournal_2012-1_Hornik~et~al.pdf
+
+
+# Others for tests and functions are setup further below.
 ######################
 
 ######################
@@ -197,6 +225,14 @@ for (i in pkgs_sug) {
 
 
 # Add documentation to package
+# For LICENCE:
+author <- sprintf('%s %s', first, last)
+
+# For README badges and others, assumes you are a GitHub user and that you're using travisCI
+# and codecov:
+github_user <- "AntonioJBT"
+url_ref <- sprintf('https://github.com/%s/%s', github_user, pkg_name)
+
 # Run once and modify as needed:
 usethis::use_readme_md(open = FALSE) # creates a readme and opens it for editing
 
