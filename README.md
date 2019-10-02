@@ -32,7 +32,6 @@ Quickly setup a skeleton directory with file templates for an R package:
 
 ``` r
 library(Rpacker)
-
 setwd('/a_reasonable/parent/directory/like/my_github_repos')
 pack_all_setup(pkg_name = 'packageTest',
                path = '.',
