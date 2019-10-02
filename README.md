@@ -4,7 +4,7 @@
 [![Travis build status](https://travis-ci.org/AntonioJBT/Rpacker.svg?branch=master)](https://travis-ci.org/AntonioJBT/Rpacker
 [![codecov](https://codecov.io/gh/AntonioJBT/Rpacker/branch/master/graph/badge.svg)](https://codecov.io/gh/AntonioJBT/Rpacker
 
-*Under development*
+**Under development**
 
 Rpacker wraps usethis and devtools to make it even faster to setup an R package, create functions, test, document and develop an R library. 
 
@@ -26,13 +26,14 @@ install_github("AntonioJBT/Rpacker")
 ```
 
 
-## Example
+## Quickstart
 
-This is a basic example which shows you how to solve a common problem:
+Quickly setup a skeleton directory with file templates for an R package:
 
 ``` r
 library(Rpacker)
-# setwd('/a_reasonable/parent/directory/like/my_github_repos')
+
+setwd('/a_reasonable/parent/directory/like/my_github_repos')
 pack_all_setup(pkg_name = 'packageTest',
                path = '.',
                first = "Super",
