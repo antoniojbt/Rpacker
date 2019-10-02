@@ -4,8 +4,9 @@
 [![Travis build status](https://travis-ci.org/AntonioJBT/Rpacker.svg?branch=master)](https://travis-ci.org/AntonioJBT/Rpacker
 [![codecov](https://codecov.io/gh/AntonioJBT/Rpacker/branch/master/graph/badge.svg)](https://codecov.io/gh/AntonioJBT/Rpacker
 
+*Under development*
 
-The goal of Rpacker is to ...
+Rpacker wraps usethis and devtools to make it even faster to setup an R package, create functions, test, document and develop an R library. 
 
 ## Installation
 
@@ -31,7 +32,16 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(Rpacker)
-## basic example code
+# setwd('/a_reasonable/parent/directory/like/my_github_repos')
+pack_all_setup(pkg_name = 'packageTest',
+               path = '.',
+               first = "Super",
+               last = "Duper",
+               email = "super@@duper.com",
+               pkgs = 'dummy_holder',
+               github_user = 'SuperDuper'
+               )
+
 ```
 
 
@@ -50,8 +60,11 @@ If you have any issues, pull requests, etc. please report them in the issue trac
 ## News
 
 Not released yet:
+
 - Version 0.1.0
   First release
+
+Current release:
 
 - Version 0.0.0.9000
   Development version
