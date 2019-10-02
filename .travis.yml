@@ -1,0 +1,57 @@
+#####
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+# Travis by default runs eg:
+# install:
+# - R -e 'devtools::install_deps(dep = T)'
+
+# script:
+# - R CMD build .
+# - R CMD check *tar.gz
+
+# and it looks like it already runs sessionInfo(), see:
+# https://github.com/travis-ci/travis-build/blob/master/lib/travis/build/script/r.rb
+#####
+
+
+language: R
+sudo: false
+cache: packages
+
+# r_packages
+# add dependencies here for testing, those in DESCRIPTION
+
+jobs:
+    include:
+        - r: release
+        # warnings_are_errors: false
+      # - os: osx
+      # - r: devel
+        - r: 3.4
+        - r: 3.5
+
+r_packages:
+    - covr
+    - data.table
+    - ggplot2
+    - cowplot
+    - mice
+    - VIM
+    - dplyr
+    - tibble
+    - parallel
+    - lattice
+    - svglite
+
+r_binary_packages:
+    - testthat
+    - knitr
+
+# Add coverage testing:
+# https://covr.r-lib.org/
+#r_github_packages:
+#    - r-lib/covr
+
+after_success:
+    - Rscript -e 'library(covr); covr::codecov()'
+

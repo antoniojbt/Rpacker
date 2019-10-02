@@ -1,0 +1,43 @@
+.Rproj.user
+
+
+# R files to ignore
+# History files
+.Rhistory
+.Rapp.history
+inst/doc
+
+# Session Data files
+.RData
+
+# Output files from R CMD check
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user/
+*.Rproj
+
+# Knitr and temporary files created by R markdown
+*.utf8.md
+*.knit.md
+/*_cache/
+/cache/
+
+# produced vignettes
+#vignettes/*.html
+#vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# Mac OS X and others:
+*.tar
+*.gz
+.dir_bash_history
+*.dir_bash_history
+.DS_Store
+.ipynb_checkpoints
+# Vim:
+*~
+*.swp
+
