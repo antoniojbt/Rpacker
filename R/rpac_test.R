@@ -92,17 +92,17 @@ df <- data.frame(var_id = rep(1:(n / 2), each = 2),
   if (!file.exists(test_file_name)) {
       write(test_file_header,
             file = test_file_name
-			)
+            )
      message(sprintf('File for tests created in %s',
                     file.path(getwd(), test_file_name)
                      )
             )
     message('Run rpac_add_test() to add test code blurb to this file.')
 
-	  } else {
-	  message('File already exists! Not overwriting.')
-	  message('Use rpac_add_test() to append further tests or ')
-	  message('create a new test file with a different name.')
+      } else {
+      message('File already exists! Not overwriting.')
+      message('Use rpac_add_test() to append further tests or ')
+      message('create a new test file with a different name.')
   }
   }
 
@@ -151,14 +151,14 @@ test_that("%s", {
   if (file.exists(test_file_name)) {
       write(test_text,
             file = test_file_name,
-		  	append = append
+            append = append
       )
     # Open and edit if created:
     if (open == TRUE) {
       system(sprintf('open %s', test_file_name))
         }
-	  } else {
-	  message("File to append to doesn't exist.")
-	  message("Create initial template with rpac_test_template().")
-	  }
+      } else {
+      message("File to append to doesn't exist.")
+      message("Create initial template with rpac_test_template().")
+      }
 }

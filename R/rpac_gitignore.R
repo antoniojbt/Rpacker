@@ -72,7 +72,7 @@ inst/doc
   path <- file.path(path, '.gitignore')
   write(gitignore_text,
         file = path,
-		append = append
+        append = append
         )
   message(sprintf('Created .gitignore file in %s', getwd()))
 

@@ -125,8 +125,8 @@ after_success:
   # Run once and modify as needed:
   path <- file.path(path, '.travis.yml')
   write(travis_cat,
-			  file = path,
-			  append = append)
+        file = path,
+        append = append)
   message(sprintf('Created .travis.yml file in %s', getwd()))
   message('Packages from DESCRIPTION must be added manually to .travis.yml')
   message('Codecov and Travis must be setup manually')

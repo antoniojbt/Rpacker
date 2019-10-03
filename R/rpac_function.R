@@ -7,10 +7,12 @@
 #' @param pkg_name package name as string.
 #' @param author Author name as string.
 # @param url_ref = '' # created with github_user and package
+#'
 #' @param path Pass a path as string. Default is to place files for functions in
 #' the directory './R'.
 #' @param level 'short' provides placeholders; 'long' adds explanations.
 # @param email = NULL # not passed
+#'
 #' @param open Open the project in RStudio on creation. Default is TRUE.
 #' @param github_user Pass as string, will be inserted into
 #' https://github.com/github_user/
@@ -42,23 +44,23 @@
 
 # For testing:
 # text_to_add_functions(function_name = 'rpac_test',
-# 	  															pkg_name = 'rpacker',
-# 		  														author = 'Antonio',
-# 			  													# url_ref = url_ref,
-# 				  												level = 'short',
-# 					  											email = NULL
-# 																	)
+#                       pkg_name = 'rpacker',
+#                       author = 'Antonio',
+#                       # url_ref = url_ref,
+#                       level = 'short',
+#                       email = NULL
+#                       )
 
 
 # Create the text needed:
 text_to_add_functions <- function(function_name = NULL,
                                   pkg_name = NULL,
-		  						  author = NULL,
+                                  author = NULL,
                                   github_user = NULL,
-			  					  # url_ref = url_ref,
-				  				  level = 'short',
-					  			  email = NULL
-								 ) {
+                                  # url_ref = url_ref,
+                                  level = 'short',
+                                  email = NULL
+                                 ) {
 
   # Create url_ref, for GitHub only:
   if (is.null(github_user)) {
@@ -69,7 +71,7 @@ text_to_add_functions <- function(function_name = NULL,
 
   # If modifying add additional escape slashes manually (\\), these won't be printed
   if (level == 'long') {
-	sprintf("#' @title The first line is the title
+    sprintf("#' @title The first line is the title
 #'
 #' @description %s() allows you to XXXX
 #'
@@ -135,13 +137,13 @@ text_to_add_functions <- function(function_name = NULL,
     }
   return(something_I_need)
                }",
-					function_name,
-					author,
-					url_ref,
-					email,
-					function_name
-					)
-		} else if (level == 'short') {
+                    function_name,
+                    author,
+                    url_ref,
+                    email,
+                    function_name
+                    )
+        } else if (level == 'short') {
   sprintf("#' @title
 #'
 #' @description %s()
@@ -187,12 +189,12 @@ text_to_add_functions <- function(function_name = NULL,
         }
   return(something_I_need)
   }",
-  				function_name,
-  				author,
-  				url_ref,
-  				function_name
-			)
-		}
+     function_name,
+     author,
+     url_ref,
+     function_name
+    )
+   }
   }
 
 # Create the file:
@@ -203,7 +205,7 @@ rpac_function <- function(function_name = NULL,
                           github_user = NULL,
                           level = 'short', # or 'long'
                           # email = NULL, # not passed
-						  						open = TRUE
+                          open = TRUE
                           ) {
 
   # Create and save to disk, this will be one function per file:
@@ -211,16 +213,16 @@ rpac_function <- function(function_name = NULL,
   file_name <- file.path(path, file_name)
 
   if (!file.exists(file_name)) {
-	  write(text_to_add_functions(function_name = function_name,
+      write(text_to_add_functions(function_name = function_name,
                                   pkg_name = pkg_name,
-			  					  author = author,
+                                  author = author,
                                   github_user = github_user,
-		  						  # url_ref = url_ref,
-			  					  level = level,
-				  				  email = email
-					  			 ),
+                                  # url_ref = url_ref,
+                                  level = level,
+                                  email = email
+                                 ),
             file = file_name
-		    # append = TRUE
+            # append = TRUE
       )
     message(sprintf('Template for %s created in %s',
                     function_name,
@@ -231,8 +233,8 @@ rpac_function <- function(function_name = NULL,
       system(sprintf('open %s', file_name))
       }
 
-	} else {
-		print('File already exists! Not overwriting. Use a different name.')
-	  }
+    } else {
+        print('File already exists! Not overwriting. Use a different name.')
+      }
 
     }

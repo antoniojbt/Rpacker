@@ -53,7 +53,7 @@ There are currently no downstream dependencies for this package.
   path <- file.path(path, 'cran-comments2.md')
   write(text_cran,
         file = path,
-		append = append)
+        append = append)
   message(sprintf('Created cran-comments.md file in %s', getwd()))
   message('Manually edit cran-comments.md as needed as you go along.')
   message('This will make CRAN submission easier and faster.')

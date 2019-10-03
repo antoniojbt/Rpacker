@@ -121,8 +121,8 @@ Not released yet:
   # Run once and modify as needed:
   path <- file.path(path, 'README.md')
   write(text_readme,
-			file = path,
-			append = append)
+        file = path,
+        append = append)
   message(sprintf('Created README.md file in %s', getwd()))
   message(sprintf('Create an empty repository in your github account and then
 initialise it locally with e.g.:

@@ -29,11 +29,11 @@ rpac_rbuildignore <- function(path = '.',
   # "\\" escapes:
   text_ignore <- c("^\\.travis\\.yml$",
                    "^\\.*history$",
-		  		   "^R/\\.*history$",
-			  	   "^man/\\.*history$",
-				   "^tests/\\.*history$",
-				   "^tests/testthat/\\.*history$",
-				   "^vignettes/\\.*history$",
+                   "^R/\\.*history$",
+                   "^man/\\.*history$",
+                   "^tests/\\.*history$",
+                   "^tests/testthat/\\.*history$",
+                   "^vignettes/\\.*history$",
                    "^\\.lintr$", # if using lintr: https://github.com/jimhester/lintr
                    "^data-raw$",
                    "^LICENSE\\.md$",
@@ -45,7 +45,7 @@ rpac_rbuildignore <- function(path = '.',
   # Run once and modify as needed:
   path <- file.path(path, '.Rbuildignore')
   write(text_ignore,
-	  		file = path,
-		  	append = append)
+        file = path,
+        append = append)
   message(sprintf('Created .Rbuildignore file in %s', getwd()))
   }
