@@ -51,7 +51,7 @@ coverage:
   # Run once and modify as needed:
   path <- file.path(path, 'codecov.yml')
   write(text_codecov,
-			  file = path,
-			  append = append)
+        file = path,
+		append = append)
   message(sprintf('Created codecov.yml file in %s', getwd()))
   }

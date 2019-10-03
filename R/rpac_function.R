@@ -52,13 +52,13 @@
 
 # Create the text needed:
 text_to_add_functions <- function(function_name = NULL,
-	  															pkg_name = NULL,
-		  														author = NULL,
+                                  pkg_name = NULL,
+		  						  author = NULL,
                                   github_user = NULL,
-			  													# url_ref = url_ref,
-				  												level = 'short',
-					  											email = NULL
-																	) {
+			  					  # url_ref = url_ref,
+				  				  level = 'short',
+					  			  email = NULL
+								 ) {
 
   # Create url_ref, for GitHub only:
   if (is.null(github_user)) {
@@ -212,16 +212,16 @@ rpac_function <- function(function_name = NULL,
 
   if (!file.exists(file_name)) {
 	  write(text_to_add_functions(function_name = function_name,
-		  													pkg_name = pkg_name,
-			  												author = author,
-                                github_user = github_user,
-		  													# url_ref = url_ref,
-			  												level = level,
-				  											email = email
-					  										),
-				  file = file_name
-				  # append = TRUE
-	    				  )
+                                  pkg_name = pkg_name,
+			  					  author = author,
+                                  github_user = github_user,
+		  						  # url_ref = url_ref,
+			  					  level = level,
+				  				  email = email
+					  			 ),
+            file = file_name
+		    # append = TRUE
+      )
     message(sprintf('Template for %s created in %s',
                     function_name,
                     file.path(getwd(), file_name)))

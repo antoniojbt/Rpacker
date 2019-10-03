@@ -28,17 +28,18 @@ rpac_rbuildignore <- function(path = '.',
   # Add files to ignore when building the package, use Perl regex, needs double
   # "\\" escapes:
   text_ignore <- c("^\\.travis\\.yml$",
-	  							 "^\\.*history$",
-		  						 "^R/\\.*history$",
-			  					 "^man/\\.*history$",
-				  				 "^tests/\\.*history$",
-					  			 "^tests/testthat/\\.*history$",
-						  		 "^vignettes/\\.*history$",
+                   "^\\.*history$",
+		  		   "^R/\\.*history$",
+			  	   "^man/\\.*history$",
+				   "^tests/\\.*history$",
+				   "^tests/testthat/\\.*history$",
+				   "^vignettes/\\.*history$",
                    "^\\.lintr$", # if using lintr: https://github.com/jimhester/lintr
                    "^data-raw$",
                    "^LICENSE\\.md$",
                    "^Meta$",
-                   "^CRAN-RELEASE$"
+                   "^CRAN-RELEASE$",
+                   "*legacy*"
                    )
 
   # Run once and modify as needed:

@@ -72,27 +72,27 @@ library(testthat)
 set.seed(12345)
 n <- 1000
 df <- data.frame(var_id = rep(1:(n / 2), each = 2),
-								 var_to_rep = rep(c("Pre", "Post"), n / 2),
-															x = rnorm(n),
-															y = rbinom(n, 1, 0.50),
-															z = rpois(n, 2)
+                 var_to_rep = rep(c("Pre", "Post"), n / 2),
+                 x = rnorm(n),
+                 y = rbinom(n, 1, 0.50),
+                 z = rpois(n, 2)
                  )
 # df
 
 # Set variables used in more than one test:
 # input_file <- "inst/extdata/df.tsv"
 ######################',
-											test_context,
-											pkg_name
-											)
-)
+                        test_context,
+                        pkg_name
+                      )
+     )
 
 
   # Create and save to disk:
   if (!file.exists(test_file_name)) {
-	  write(test_file_header,
-		  		file = test_file_name
-				  )
+      write(test_file_header,
+            file = test_file_name
+			)
      message(sprintf('File for tests created in %s',
                     file.path(getwd(), test_file_name)
                      )
@@ -142,16 +142,16 @@ test_that("%s", {
   )
 ######################
 ',
-											 function_name,
-											 function_name
-											 )
-							 )
+                       function_name,
+                       function_name
+                          )
+  )
 
   # Create and save to disk, append by default:
   if (file.exists(test_file_name)) {
-    write(test_text,
-	  		  file = test_file_name,
-		  	  append = append
+      write(test_text,
+            file = test_file_name,
+		  	append = append
       )
     # Open and edit if created:
     if (open == TRUE) {
