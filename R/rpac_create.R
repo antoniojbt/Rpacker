@@ -1,6 +1,6 @@
 #' @title Wrapper for passing DESCRIPTION fields and creating a package directory
 #'
-#' @description pack_create() is a wrapper on usethis::create_pacakge(). Passes
+#' @description rpac_create() is a wrapper on usethis::create_pacakge(). Passes
 #' field arguments for DESCRIPTION and creates the directory skeleton for an R
 #' package. Also creates a GPL3 licence, if you prefer other options run
 #' usethis::use_*_license().
@@ -42,7 +42,7 @@
 #' @examples
 #'
 #' \dontrun{
-#' pack_create(pkg_name = 'testPackage',
+#' rpac_create(pkg_name = 'testPackage',
 #'             path = '.',
 #'             first = "Super",
 #'             last = "Duper",
@@ -57,7 +57,7 @@
 #' @export
 #'
 
-pack_create <- function(pkg_name = 'test_package',
+rpac_create <- function(pkg_name = 'test_package',
                         path = NULL,
                         first = "Super",
                         last = "Duper",

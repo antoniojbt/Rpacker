@@ -1,6 +1,6 @@
 #' @title Add packages to DESCRIPTION
 #'
-#' @description pack_dependencies() adds packages to load which are dependencies.
+#' @description rpac_dependencies() adds packages to load which are dependencies.
 #' Light wrapper for usethis::use_package()
 #'
 #' @param pkgs Packages to add to DESCRIPTION, pass as strings
@@ -26,7 +26,7 @@
 #'           'cowplot',
 #'           'dplyr'
 #'           )
-#' pack_dependencies(pkgs = pkgs)
+#' rpac_dependencies(pkgs = pkgs)
 #'
 #' }
 #'
@@ -34,7 +34,7 @@
 #'
 
 
-pack_dependencies <- function(pkgs = NULL,
+rpac_dependencies <- function(pkgs = NULL,
                               type = 'Suggests',
                               ...
                               ) {

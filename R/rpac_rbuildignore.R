@@ -1,6 +1,6 @@
 #' @title Creates a .Rbuildignore template file
 #'
-#' @description pack_rbuildignore() creates a .Rbuildignore file
+#' @description rpac_rbuildignore() creates a .Rbuildignore file
 #'
 #' @param path Pass a path as string. Default is current working directory ('.').
 #' @param append Append text to an existing file. Default is FALSE.
@@ -15,14 +15,14 @@
 #'
 #' \dontrun{
 #' setwd('/my_github/my_packages/test_package')
-#' pack_rbuildignore()
+#' rpac_rbuildignore()
 #'
 #' }
 #'
 #' @export
 #'
 
-pack_rbuildignore <- function(path = '.',
+rpac_rbuildignore <- function(path = '.',
                               append = FALSE
                               ) {
   # Add files to ignore when building the package, use Perl regex, needs double

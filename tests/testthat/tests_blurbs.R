@@ -1,4 +1,4 @@
-# Test blurbs for Rpacker and vignette
+# Test blurbs for Rpacker and vignette for initial setup
 
 ######################
 # Create an R package 1 - create initial setup
@@ -81,15 +81,15 @@
 # setwd('/Users/antoniob/Desktop/Downloads_to_delete/packageTest/')
 ######################
 
-# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/pack_all_setup.R')
-# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/pack_cran_comments.R')
-# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/pack_create.R')
-# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/pack_dependencies.R')
-# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/pack_gitignore.R')
-# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/pack_rbuildignore.R')
-# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/pack_readme.R')
-# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/pack_travis.R')
-# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/pack_codecov.R')
+# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/rpac_all_setup.R')
+# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/rpac_cran_comments.R')
+# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/rpac_create.R')
+# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/rpac_dependencies.R')
+# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/rpac_gitignore.R')
+# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/rpac_rbuildignore.R')
+# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/rpac_readme.R')
+# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/rpac_travis.R')
+# source('~/Documents/github.dir/AntonioJBT/Rpacker/R/rpac_codecov.R')
 
 # Load all packages needed
 # devtools is being refactored (https://github.com/r-lib/devtools)
@@ -97,7 +97,7 @@ library(devtools) # load functions, build, install, etc.
 library(roxygen2) # create documentation
 library(usethis) # create packages and functions more easily
 
-pack_create(pkg_name = 'testPackage',
+rpac_create(pkg_name = 'testPackage',
             path = '.',
             first = "Super",
             last = "Duper",
@@ -106,14 +106,14 @@ pack_create(pkg_name = 'testPackage',
             lang = "en-GB"
             )
 
-pack_rbuildignore()
+rpac_rbuildignore()
 
 pkgs <- c('data.table',
           'ggplot2',
           'cowplot',
           'dplyr'
           )
-pack_dependencies(pkgs = pkgs)
+rpac_dependencies(pkgs = pkgs)
 
 # Add test template, run once
 # Run once to create tests/testthat/ and tests/testthat.R so that
@@ -122,9 +122,9 @@ usethis::use_testthat()
 # Create individual functions and tests as needed after setting up the R package
 # structure
 
-pack_gitignore()
+rpac_gitignore()
 
-pack_travis()
+rpac_travis()
 # Copy packages manually as functions and dependencies get added:
 pkgs <- c('data.table',
           'ggplot2',
@@ -147,10 +147,10 @@ usethis::use_coverage() # run once and follow instructions
 # Add comment that token might need to be added manually
 #####
 
-pack_cran_comments()
+rpac_cran_comments()
 
 
-pack_readme(github_user = 'me',
+rpac_readme(github_user = 'me',
             pkg_name = 'superPackage',
             path = '.'
             )
@@ -226,7 +226,7 @@ usethis::use_vignette(sprintf('introduction_%s', pkg_name))
 ######################
 
 # Rin it all in one go:
-pack_all_setup(pkg_name = 'packageTest',
+rpac_all_setup(pkg_name = 'packageTest',
               path = '.',
               first = "Super",
               last = "Duper",

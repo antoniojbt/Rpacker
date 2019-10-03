@@ -6,7 +6,7 @@
 
 **Under development**
 
-Rpacker wraps usethis and devtools to make it even faster to setup an R package, create functions, test, document and develop an R library. 
+Rpacker creates templates and wraps usethis and devtools to make it even faster to setup an R package, create functions, test, document and develop an R library. 
 
 ## Installation
 
@@ -33,7 +33,9 @@ Quickly setup a skeleton directory with file templates for an R package:
 ``` r
 library(Rpacker)
 setwd('/a_reasonable/parent/directory/like/my_github_repos')
-pack_all_setup(pkg_name = 'packageTest',
+
+# Generate all the files and directories needed for an R package using the devtools workflow:
+rpac_all_setup(pkg_name = 'packageTest',
                path = '.',
                first = "Super",
                last = "Duper",
@@ -41,6 +43,18 @@ pack_all_setup(pkg_name = 'packageTest',
                pkgs = 'dummy_holder',
                github_user = 'SuperDuper'
                )
+
+# Generate a file template for a function using roxygen2 for documentation:
+rpac_function(function_name = 'rpac_test',
+              pkg_name = 'Rpacker',
+              path = 'R',
+              author = 'Antonio J. Berlanga-Taylor',
+              github_user = 'AntonioJBT',
+              level = 'short',
+              open = TRUE # tries to open file
+              )
+
+# Generate a file template for code tests to run with testthat:
 
 ```
 

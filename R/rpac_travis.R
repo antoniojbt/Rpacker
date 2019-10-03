@@ -1,6 +1,6 @@
 #' @title Create a Travis-CI yaml template
 #'
-#' @description pack_travis() creates a template for Linux and Mac OS tests with
+#' @description rpac_travis() creates a template for Linux and Mac OS tests with
 #' suggestions for settings for covr and vdiffr testing.
 #'
 #' @param path Pass a path as string. Default is current working directory ('.').
@@ -21,7 +21,7 @@
 #' @examples
 #'
 #' \dontrun{
-#' pack_travis()
+#' rpac_travis()
 #' # Copy packages manually as functions and dependencies get added:
 #' pkgs <- c('data.table',
 #'           'ggplot2',
@@ -37,7 +37,7 @@
 #' @export
 #'
 
-pack_travis <- function(path = '.',
+rpac_travis <- function(path = '.',
                         append = TRUE
                ) {
 

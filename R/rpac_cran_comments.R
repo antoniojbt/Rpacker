@@ -1,6 +1,6 @@
 #' @title Create a text file template for CRAN submission
 #'
-#' @description pack_cran_comments() creates a template to log errors, warnings
+#' @description rpac_cran_comments() creates a template to log errors, warnings
 #' and notes to make it easier for CRAN submission. Wraps usethis::use_cran_comments()
 #' and adds some text to it.
 #'
@@ -14,14 +14,14 @@
 #' @examples
 #'
 #' \dontrun{
-#' pack_cran_comments()
+#' rpac_cran_comments()
 #'
 #' }
 #'
 #' @export
 #'
 
-pack_cran_comments <- function(path = '.',
+rpac_cran_comments <- function(path = '.',
                                append = TRUE
                                ) {
   # If submitting to CRAN, track your efforts to comply:

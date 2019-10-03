@@ -1,6 +1,6 @@
 #' @title Generates a README template for a GitHub repository
 #'
-#' @description pack_readme() creates a README, includes badges travisCI and
+#' @description rpac_readme() creates a README, includes badges travisCI and
 #' codecov
 #'
 #' @param github_user Pass as string, will be inserted into
@@ -16,7 +16,7 @@
 #' @examples
 #'
 #' \dontrun{
-#' pack_readme(github_user = 'me',
+#' rpac_readme(github_user = 'me',
 #'             pkg_name = 'superPackage',
 #'             path = '.'
 #'             )
@@ -25,7 +25,7 @@
 #' @export
 #'
 
-pack_readme <- function(github_user = NULL,
+rpac_readme <- function(github_user = NULL,
                         pkg_name = NULL,
                         path = '.',
                         append = TRUE
@@ -55,7 +55,7 @@ pack_readme <- function(github_user = NULL,
 %s
 %s
 
-%s is to ...
+%s does X and Y ...
 
 ## Installation
 
@@ -75,9 +75,9 @@ install_github("%s/%s")
 ```
 
 
-## Example
+## Quickstart
 
-This is a basic example which shows you how to solve a common problem:
+Example of usage
 
 ``` r
 library(%s)

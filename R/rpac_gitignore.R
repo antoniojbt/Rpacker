@@ -1,6 +1,6 @@
 #' @title Create a .gitignore file template
 #'
-#' @description pack_gitignore() Creates a preset .gitignore file.
+#' @description rpac_gitignore() Creates a preset .gitignore file.
 #'
 #' @param path Pass a path as string. Default is current working directory ('.').
 #' @param append Append text to an existing file. Default is TRUE.
@@ -10,7 +10,7 @@
 #' @examples
 #'
 #' \dontrun{
-#' pack_gitignore()
+#' rpac_gitignore()
 #'
 #'
 #' }
@@ -18,7 +18,7 @@
 #' @export
 #'
 
-pack_gitignore <- function(path = '.',
+rpac_gitignore <- function(path = '.',
                            append = TRUE
                            ) {
   # Create .gitignore file

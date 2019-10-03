@@ -1,6 +1,6 @@
 #' @title Create a template for code coverage yaml file
 #'
-#' @description pack_codecov() creates a yaml template for use with covr and
+#' @description rpac_codecov() creates a yaml template for use with covr and
 #' codecov
 #'
 #' @param path Pass a path as string. Default is current working directory ('.').
@@ -15,14 +15,14 @@
 #' @examples
 #'
 #' \dontrun{
-#' pack_codecov()
+#' rpac_codecov()
 #'
 #' }
 #'
 #' @export
 #'
 
-pack_codecov <- function(path = '.',
+rpac_codecov <- function(path = '.',
                          append = TRUE,
                          threshold = '1%'
                          ) {

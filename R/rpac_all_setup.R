@@ -1,6 +1,6 @@
 #' @title Setup templates and directories for an R package
 #'
-#' @description pack_all_setup() creates various directories and files to quickly
+#' @description rpac_all_setup() creates various directories and files to quickly
 #' setup an R package. Includes skeleton structure for code, tests, documentation
 #' plus various templates. Various defaults assumed, including templates for
 #' GitHub, Travis-CI and Codecov.
@@ -15,28 +15,28 @@
 #' @param pkgs Packages to add to DESCRIPTION, pass as string.
 #'
 # Could add all the arguments later on:
-# From pack_dependencies():
+# From rpac_dependencies():
 # @param type Type of dependency from use_package(). Default is 'Suggests'
 #
-# From pack_create()
+# From rpac_create()
 # @param role , field for DESCRIPTION. Default 'c("aut", "cre")'
 # @param lic LICENCE to use. Hardcoded to GPL-3, field for DESCRIPTION only.
 # @param lang Field for language, field for DESCRIPTION. Default is "en-GB"
 # @param rstudio Creates an RStudio project. Default is TRUE
 # @param open Open the project in RStudio on creation. Default is FALSE
 #
-# From pack_codecov():
+# From rpac_codecov():
 # @param threshold codecov threshold to pass. Default is 1%.
 #'
 #' @author Antonio J Berlanga-Taylor <\url{https://github.com/AntonioJBT/Rpacker}>
 #'
-#' @seealso \code{\link{pack_create}},
-#' \code{\link{pack_rbuildignore}},
-#' \code{\link{pack_dependencies}},
-#' \code{\link{pack_gitignore}},
-#' \code{\link{pack_travis}},
-#' \code{\link{pack_cran_comments}},
-#' \code{\link{pack_readme}},
+#' @seealso \code{\link{rpac_create}},
+#' \code{\link{rpac_rbuildignore}},
+#' \code{\link{rpac_dependencies}},
+#' \code{\link{rpac_gitignore}},
+#' \code{\link{rpac_travis}},
+#' \code{\link{rpac_cran_comments}},
+#' \code{\link{rpac_readme}},
 #' \code{\link[usethis]{use_package_doc}},
 #' \code{\link[usethis]{use_vignette}},
 #' \code{\link[usethis]{use_testthat}},
@@ -50,7 +50,7 @@
 #' setwd('/somewhere/sensible/like/github_repos/')
 #'
 #' # Run lots of functions for quick setup:
-#' pack_all_setup(pkg_name = 'packageTest',
+#' rpac_all_setup(pkg_name = 'packageTest',
 #'                path = '.',
 #'                first = "Super",
 #'                last = "Duper",
@@ -64,7 +64,7 @@
 #' @export
 #'
 
-pack_all_setup <- function(pkg_name = 'packageTest',
+rpac_all_setup <- function(pkg_name = 'packageTest',
                            path = '.',
                            first = "Super",
                            last = "Duper",
@@ -89,7 +89,7 @@ pack_all_setup <- function(pkg_name = 'packageTest',
   }
 
   # Create basic skeleton:
-  pack_create(pkg_name = pkg_name,
+  rpac_create(pkg_name = pkg_name,
               path = path,
               first = first,
               last = last,
@@ -97,29 +97,29 @@ pack_all_setup <- function(pkg_name = 'packageTest',
               )
 
   # Create .Rbuildignore file with various preferences:
-  pack_rbuildignore(path = path)
+  rpac_rbuildignore(path = path)
 
   # Add dependencies to DESCRIPTION, here only adds one for setup:
-  pack_dependencies(pkgs = pkgs, type = 'Imports')
+  rpac_dependencies(pkgs = pkgs, type = 'Imports')
 
   # Add test folders:
   usethis::use_testthat()
 
   # Add .gitignore file:
-  pack_gitignore(path = path)
+  rpac_gitignore(path = path)
 
   # Add .travis.yml file:
-  pack_travis(path = path)
+  rpac_travis(path = path)
 
   # Add code coverage:
   # usethis::use_coverage() # errors if it doesn't find .git (?)
-  pack_codecov(path = path)
+  rpac_codecov(path = path)
 
   # Add cran-comments.md file:
-  pack_cran_comments(path = path)
+  rpac_cran_comments(path = path)
 
   # Add readme template:
-  pack_readme(github_user = github_user,
+  rpac_readme(github_user = github_user,
               pkg_name = pkg_name,
               path = path
               )
