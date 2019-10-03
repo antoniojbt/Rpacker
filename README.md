@@ -55,6 +55,18 @@ rpac_function(function_name = 'rpac_test',
               )
 
 # Generate a file template for code tests to run with testthat:
+rpac_test_template(test_name = 'rpack_test_template',
+                   pkg_name = 'rpack',
+                   path = 'tests/testthat/'
+                   )
+
+# Add some boilerplate code to the same file for a given function:
+rpac_add_test(test_name = 'rpack_test_template',
+              function_name = 'function_to_test',
+              path = 'tests/testthat',
+              append = TRUE,
+              open = TRUE
+              )
 
 ```
 
