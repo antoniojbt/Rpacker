@@ -41,6 +41,8 @@
 #'               )
 #' }
 #'
+#' @name rpac_test_template
+#' @rdname rpac_test_template
 #' @export
 #'
 
@@ -48,7 +50,6 @@ rpac_test_template <- function(test_name = NULL,
                                pkg_name = NULL,
                                path = 'tests/testthat'
                                ) {
-
   test_context <- sprintf('%s %s function tests', pkg_name, test_name)
   test_file_name <- sprintf('test-%s.R', test_name)
   test_file_name <- file.path(path, test_file_name)
@@ -106,6 +107,10 @@ df <- data.frame(var_id = rep(1:(n / 2), each = 2),
   }
   }
 
+
+#' @rdname rpac_test_template
+#' @export
+
 # Add boilerplate code for each additional test, append to test file:
 rpac_add_test <- function(test_name = NULL,
                           function_name = NULL,
@@ -155,7 +160,8 @@ test_that("%s", {
       )
     # Open and edit if created:
     if (open == TRUE) {
-      system(sprintf('open %s', test_file_name))
+      # system(sprintf('open %s', test_file_name))
+      utils::file.edit(test_file_name)
         }
       } else {
       message("File to append to doesn't exist.")

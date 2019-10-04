@@ -1,5 +1,5 @@
 # Code for vignette for devtools based workflow including roxygen2 documentation,
-build, check, install and GitHub
+# build, check, install and GitHub
 
 #####
 # Document the package (takes info from DESCRIPTION and functions), use one of:
@@ -10,7 +10,7 @@ build, check, install and GitHub
 devtools::document()
 
 # Check spelling:
-devtools::spell_check()
+devtools::spell_check(use_wordlist = TRUE)
 
 # This will modify NAMESPACE, re-run until no errors are shown,
 # then build and install

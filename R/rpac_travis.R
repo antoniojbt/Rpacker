@@ -6,10 +6,6 @@
 #' @param path Pass a path as string. Default is current working directory ('.').
 #' @param append Append text to an existing file. Default is TRUE.
 #'
-#' @param
-#'
-#' @return
-#'
 #' @note  Adds blurbs for travis-ci and codecov shields. Packages need to be
 #' added manually to .travis.yml and DESCRIPTION later on.
 #' Also see the template from usethis::use_travis()
