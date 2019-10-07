@@ -6,7 +6,7 @@
 
 **Under development**
 
-Rpacker creates templates and wraps usethis and devtools to make it even faster to setup an R package, create functions, test, document and develop an R library. 
+Rpacker creates templates and wraps usethis and devtools to quickly setup an R package, create functions, test, document and develop.
 
 ## Installation
 
