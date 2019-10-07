@@ -128,7 +128,7 @@ Not released yet:
 initialise it locally with e.g.:
 git init
 git add *
-git commit -m "first commit with skeleton directory")
+git commit -m "first commit with skeleton directory"
 git remote add origin https://github.com/%s/%s
 git push -u origin master
 ',

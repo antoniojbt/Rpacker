@@ -142,8 +142,8 @@ for (i in pkgs) {
 # You need to have manually signed up to Travis-CI and codecov to change settings,
 # see coverage details, etc. See codecov:
 # https://github.com/r-lib/covr
-# Run git init first, then this:g
-usethis::use_coverage() # run once and follow instructions
+# Run git init first, then this:
+rpac_codecov() # run once and follow instructions
 # Add comment that token might need to be added manually
 #####
 
@@ -225,7 +225,7 @@ usethis::use_vignette(sprintf('introduction_%s', pkg_name))
 # Build the vignette in the next script
 ######################
 
-# Rin it all in one go:
+# Run it all in one go:
 rpac_all_setup(pkg_name = 'packageTest',
               path = '.',
               first = "Super",

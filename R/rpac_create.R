@@ -21,6 +21,9 @@
 #' licence.
 #'
 #' @note Choose a good package name! See e.g. <\url{http://r-pkgs.had.co.nz/package.html#naming}>.
+#' Note that R package names have certain convetions (.e.g it won't accept
+#' dashes or underscores) but the vignette creation function included here (from
+#' the usethis package) won't take '.'.
 #'
 #' For authorship see for example:
 #' https://journal.r-project.org/archive/2012-1/RJournal_2012-1_Hornik~et~al.pdf
@@ -57,11 +60,11 @@
 #' @export
 #'
 
-rpac_create <- function(pkg_name = 'test_package',
-                        path = NULL,
-                        first = "Super",
-                        last = "Duper",
-                        email = "super@@duper.com",
+rpac_create <- function(pkg_name = NULL,
+                        path = '.',
+                        first = NULL,
+                        last = NULL,
+                        email = NULL,
                         role = 'c("aut", "cre")',
                         lic = "GPL-3",
                         lang = "en-GB",
@@ -101,7 +104,7 @@ if (!requireNamespace('usethis', quietly = TRUE)) {
   # Generate GPL3 licence:
   author <- sprintf('%s %s', first, last)
   setwd(sprintf('%s/%s', getwd(), pkg_name))
-  message(sprintf('Moved to %s', getwd()))
+  message(sprintf('Change directories to %s', getwd()))
   usethis::use_gpl3_license(name = author) # run once
 
   }

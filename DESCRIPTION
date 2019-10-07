@@ -1,12 +1,12 @@
 Package: Rpacker
-Title: What the Package Does (One Line, Title Case)
+Title: Quickly Setup An R Package Using a Devtools Workflow
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Antonio J.",
            family = "Berlanga-Taylor",
            role = c("aut", "cre"),
            email = "antoniojberlanga@gmail.com")
-Description: What the package does (one paragraph).
+Description: Rpacker creates templates and wraps usethis and devtools to quickly setup an R package, create functions, test, document and develop.
 License: GPL-3
 Encoding: UTF-8
 Language: en-GB

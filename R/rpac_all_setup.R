@@ -64,13 +64,13 @@
 #' @export
 #'
 
-rpac_all_setup <- function(pkg_name = 'packageTest',
+rpac_all_setup <- function(pkg_name = NULL,
                            path = '.',
-                           first = "Super",
-                           last = "Duper",
-                           email = "super@duper.com",
-                           pkgs = 'devtools',
-                           github_user = 'SuperDuper'
+                           first = NULL,
+                           last = NULL,
+                           email = NULL,
+                           pkgs = NULL,
+                           github_user = NULL
                            ) {
   # Use this instead or library or require inside functions:
   if (!requireNamespace('usethis', quietly = TRUE)) {
@@ -135,5 +135,5 @@ rpac_all_setup <- function(pkg_name = 'packageTest',
 
   message(sprintf('Done creating templates and folders for the package %s', pkg_name))
   message(sprintf('Files were created in %s', getwd()))
-  message('Write functions and add tests now. Check the vignette for more.')
+  message('Next step is to write functions and add tests. Check the vignette for examples.')
   }

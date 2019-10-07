@@ -3,7 +3,7 @@
 #' @description rpac_rbuildignore() creates a .Rbuildignore file
 #'
 #' @param path Pass a path as string. Default is current working directory ('.').
-#' @param append Append text to an existing file. Default is FALSE.
+#' @param append Append text to an existing file. Default is TRUE
 
 #' @return Creates a .Rbuildignore file in the working directory
 #'
@@ -23,26 +23,25 @@
 #'
 
 rpac_rbuildignore <- function(path = '.',
-                              append = FALSE
+                              append = TRUE
                               ) {
   # Add files to ignore when building the package, use Perl regex, needs double
   # "\\" escapes:
   text_ignore <- c("^\\.travis\\.yml$",
-                   "^\\..*history$",
-                   "^R/\\..*history$",
-                   "^man/\\..*history$",
-                   "^tests/\\..*history$",
-                   "^tests/testthat/\\..*history$",
-                   "^vignettes/\\..*history$",
+                   "^\\.*history$",
+                   "^R/\\.*history$",
+                   "^man/\\.*history$",
+                   "^tests/\\.*history$",
+                   "^tests/testthat/\\.*history$",
+                   "^vignettes/\\.*history$",
                    "^\\.lintr$", # if using lintr: https://github.com/jimhester/lintr
                    "^data-raw$",
                    "^LICENSE\\.md$",
                    "^Meta$",
                    "^CRAN-RELEASE$",
-                   ".*legacy.*",
-                   ".*\\.Rproj",
-                   "codecov.yml",
-                   "cran-comments.md"
+                   "\\.*legacy\\.*",
+                   "\\.*\\.Rproj",
+                   "^codecov\\.yml$"
                    )
 
   # Run once and modify as needed:

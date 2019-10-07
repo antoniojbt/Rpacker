@@ -50,7 +50,7 @@ There are currently no downstream dependencies for this package.
 
 ")
   # Run once and modify as needed:
-  path <- file.path(path, 'cran-comments2.md')
+  path <- file.path(path, 'cran-comments.md')
   write(text_cran,
         file = path,
         append = append)
