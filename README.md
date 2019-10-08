@@ -41,7 +41,34 @@ rpac_all_setup(pkg_name = 'packageTest',
                pkgs = 'dummy_holder',
                github_user = 'SuperDuper'
                )
+```
 
+This will give you e.g.:
+```
+tree -a /private/tmp/testPackage
+/private/tmp/testPackage
+├── .Rbuildignore
+├── .gitignore
+├── .travis.yml
+├── DESCRIPTION
+├── LICENSE.md
+├── NAMESPACE
+├── R
+│   └── testPackage-package.R
+├── README.md
+├── codecov.yml
+├── cran-comments.md
+├── testPackage.Rproj
+├── tests
+│   ├── testthat
+│   └── testthat.R
+└── vignettes
+    ├── .gitignore
+    └── introduction_testPackage.Rmd
+```
+
+Generate templates for each new function and test you add:
+```
 # Generate a file template for a function using roxygen2 for documentation:
 rpac_function(function_name = 'rpac_test',
               pkg_name = 'testPackage',
@@ -65,7 +92,6 @@ rpac_add_test(test_name = 'rpack_test_template',
               append = TRUE,
               open = TRUE
               )
-
 ```
 
 See the [devtools workflow](https://devtools.r-lib.org/), check the [R packages book](http://r-pkgs.had.co.nz/) and the [official R reference](https://cran.r-project.org/doc/manuals/r-release/R-exts.html).
