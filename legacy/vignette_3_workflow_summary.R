@@ -1,6 +1,10 @@
 # Code for vignette for devtools based workflow including roxygen2 documentation,
 # build, check, install and GitHub
 
+# See cheatsheet devtools:
+# https://rawgit.com/rstudio/cheatsheets/master/package-development.pdf
+
+
 #####
 # Load all functions:
 devtools::load_all()

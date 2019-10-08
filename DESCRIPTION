@@ -17,5 +17,7 @@ Imports:
     usethis
 Suggests: 
     testthat,
-    covr
+    covr.
+    knitr,
+    rmarkdown
 RoxygenNote: 6.1.1
