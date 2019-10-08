@@ -79,9 +79,8 @@ test_that("rpac_all_setup", {
 
   # Test some contents (also covered in other tests):
   readme <- readLines('README.md')
+  expect_equal(readme[1], '')
   expect_equal(readme[2], sprintf("# %s", pkg_name))
-  expect_equal(readme[39], sprintf("- [Issue Tracker](https://github.com/%s/%s/issues)", github_user, pkg_name))
-  expect_equal(readme[55], "- Version 0.0.0.9000")
   }
   )
 ######################

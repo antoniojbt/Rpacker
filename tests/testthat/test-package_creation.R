@@ -177,9 +177,8 @@ test_that("rpac_readme", {
   expect_equal(file.exists("README.md"), TRUE)
   # Test contents:
   readme <- readLines('README.md')
+  expect_equal(readme[1], '')
   expect_equal(readme[2], sprintf("# %s", pkg_name))
-  expect_equal(readme[39], sprintf("- [Issue Tracker](https://github.com/%s/%s/issues)", github_user, pkg_name))
-  expect_equal(readme[55], "- Version 0.0.0.9000")
   }
   )
 ######################
