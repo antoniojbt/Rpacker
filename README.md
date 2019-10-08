@@ -4,7 +4,7 @@
 [![Travis build status](https://travis-ci.org/AntonioJBT/Rpacker.svg?branch=master)](https://travis-ci.org/AntonioJBT/Rpacker)
 [![codecov](https://codecov.io/gh/AntonioJBT/Rpacker/branch/master/graph/badge.svg)](https://codecov.io/gh/AntonioJBT/Rpacker)
 
-Rpacker creates templates and wraps usethis and devtools to quickly setup an R package, create functions, test, document and develop.
+Rpacker creates templates and wraps usethis and devtools to quickly setup an R package, write functions, tests and documentation.
 
 ## Installation
 
@@ -68,13 +68,13 @@ rpac_add_test(test_name = 'rpack_test_template',
 
 ```
 
-There is a lot more in the [devtools workflow](https://devtools.r-lib.org/). Make sure to check the [R packages book](http://r-pkgs.had.co.nz/) and the [official R reference](https://cran.r-project.org/doc/manuals/r-release/R-exts.html).
+See the [devtools workflow](https://devtools.r-lib.org/), check the [R packages book](http://r-pkgs.had.co.nz/) and the [official R reference](https://cran.r-project.org/doc/manuals/r-release/R-exts.html).
 
 ## Contribute
 
 - [Issue Tracker](https://github.com/AntonioJBT/Rpacker/issues)
 
-- Pull requests welcome!
+- Pull requests welcome
 
 
 Support
