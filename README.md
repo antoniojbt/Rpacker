@@ -37,7 +37,7 @@ rpac_all_setup(pkg_name = 'packageTest',
                path = '.',
                first = 'Super',
                last = 'Duper',
-               email = 'super@@duper.com',
+               email = 'super@duper.com',
                pkgs = 'dummy_holder',
                github_user = 'SuperDuper'
                )
@@ -45,8 +45,6 @@ rpac_all_setup(pkg_name = 'packageTest',
 
 This will give you e.g.:
 ```
-tree -a /private/tmp/testPackage
-/private/tmp/testPackage
 ├── .Rbuildignore
 ├── .gitignore
 ├── .travis.yml
@@ -74,7 +72,7 @@ rpac_function(function_name = 'rpac_test',
               pkg_name = 'testPackage',
               path = 'R',
               author = 'Super Duper',
-              github_user = 'Super',
+              github_user = 'SuperDuper',
               level = 'short',
               open = TRUE # tries to open file
               )
@@ -110,7 +108,7 @@ If you have any issues, pull requests, etc. please report them in the issue trac
 
 ## News
 
-Not released yet:
+Not released:
 
 - Version 0.1.1
   + bug fixes, etc.
