@@ -4,6 +4,24 @@
 # See cheatsheet devtools:
 # https://rawgit.com/rstudio/cheatsheets/master/package-development.pdf
 
+# [devtools workflow](https://devtools.r-lib.org/)
+# And follow the devtools workflow:
+devtools::load_all() # Load all functions in 'R/'
+devtools::test() # Test code
+devtools::test_coverage() # Get a coverage report
+devtools::document() # Document the package
+devtools::spell_check() # Check spelling
+
+# Check code, build and install the package:
+devtools::check()
+devtools::build()
+devtools::install()
+devtools::check_win()
+devtools::check_rhub()
+
+# If all good, submit to CRAN:
+devtools::release()
+
 
 #####
 # Load all functions:
@@ -150,13 +168,15 @@ system('git log --pretty=oneline')
 # Create a tag, give it a version, internal message
 # and point it to the commit you want to tag
 # edit message and paste hash
-system('git tag -a v0.1 -m "XXXMESSAGE XXXDATE"
-			 HASH')
+vers <- '0.1.0'
+mess <- 'first release'
+hash <- '6aa72c0d4ac693d0a3a5f3460f6a9cd5b85e34e4'
+system(sprintf('git tag -a v%s -m "%s" %s', vers, mess, hash))
 # Push the tag
 # By default, the git push command does not transfer tags to remote servers,
 # so run:
 # Paste the same version as in DESCRIPTION
-system('git push origin vXXX')
+system(sprintf('git push origin v%s', vers))
 # You'll then need to click around in the GitHub repository to formally publish
 # the release. The package will now be on CRAN and GitHub.
 #####

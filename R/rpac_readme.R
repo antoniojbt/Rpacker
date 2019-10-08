@@ -100,8 +100,16 @@ If you have any issues, pull requests, etc. please report them in the issue trac
 ## News
 
 Not released yet:
+
+- Version 0.1.1
+  bug fixes, etc.
+
+Current release:
+
 - Version 0.1.0
   First release
+
+Previous:
 
 - Version 0.0.0.9000
   Development version

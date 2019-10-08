@@ -65,14 +65,6 @@ rpac_function(function_name = 'rpac_test',
               level = 'short',
               open = TRUE # tries to open file
               )
-# For testing:
-text_to_add_functions(function_name = 'rpac_test',
-	  															pkg_name = 'rpacker',
-		  														author = 'Antonio',
-			  													# url_ref = url_ref,
-				  												level = 'short',
-					  											email = NULL
-
 
 rpac_test_template(test_name = 'rpack_test_template',
                    pkg_name = 'rpack',

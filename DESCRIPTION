@@ -1,6 +1,6 @@
 Package: Rpacker
 Title: Quickly Setup An R Package Using a Devtools Workflow
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person(given = "Antonio J.",
            family = "Berlanga-Taylor",
