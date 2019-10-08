@@ -52,7 +52,7 @@ rpac_test_template <- function(test_name = NULL,
                                pkg_name = NULL,
                                path = 'tests/testthat'
                                ) {
-  test_context <- sprintf('%s %s function tests', pkg_name, test_name)
+  test_context <- sprintf('%s %s tests', pkg_name, test_name)
   test_file_name <- sprintf('test-%s.R', test_name)
   test_file_name <- file.path(path, test_file_name)
 

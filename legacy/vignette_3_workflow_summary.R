@@ -17,6 +17,7 @@ devtools::spell_check(use_wordlist = TRUE)
 
 # Test code:
 devtools::test()
+devtools::test_coverage()
 
 # This will modify NAMESPACE, re-run until no errors are shown,
 # then build and install

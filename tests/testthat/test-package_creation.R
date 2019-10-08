@@ -1,4 +1,4 @@
-context("Rpacker package_creation tests")
+context("Rpacker package and template creation tests")
 
 ######################
 library(Rpacker)
@@ -42,6 +42,7 @@ pkgs <- c('devtools',
           'roxygen2',
           'usethis'
           )
+test_name <- 'file_templates'
 ######################
 
 ######################
@@ -183,13 +184,53 @@ test_that("rpac_readme", {
   )
 ######################
 
+######################
+print("Function being tested: rpac_test_template")
 
+test_that("rpac_test_template", {
+  rpac_test_template(test_name = test_name,
+                     pkg_name = pkg_name)
+  expect_equal(file.exists("tests/testthat/test-file_templates.R"), TRUE)
+  # Testing content here:
+  test_file <- readLines('tests/testthat/test-file_templates.R')
+  expect_equal(test_file[1], sprintf("context('%s file_templates tests')",
+                                      pkg_name)
+    )
+  }
+  )
+######################
 
+######################
+print("Function being tested: rpac_add_test")
 
+test_that("rpac_add_test", {
+  rpac_add_test(test_name = test_name,
+                function_name = 'rpac_add_test',
+                open = FALSE)
+  # Testing content here:
+  test_file <- readLines('tests/testthat/test-file_templates.R')
+  expect_equal(test_file[48], "######################")
+  expect_equal(test_file[49], "print(\"Function being tested: rpac_add_test\")")
+  }
+  )
+######################
 
+######################
+print("Function being tested: rpac_function")
 
-
-
-
-
-
+test_that("rpac_function", {
+  rpac_function(function_name = 'rpac_func_short',
+                pkg_name = pkg_name,
+                path = 'R',
+                author = 'Antonio',
+                github_user = github_user,
+                level = 'short',
+                open = FALSE
+                )
+  expect_equal(file.exists('R/rpac_func_short.R'), TRUE)
+  # Testing content here:
+  func_file <- readLines('R/rpac_func_short.R')
+  expect_equal(func_file[1], "#' @title")
+  }
+  )
+######################
