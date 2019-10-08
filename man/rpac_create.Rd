@@ -4,10 +4,9 @@
 \alias{rpac_create}
 \title{Wrapper for passing DESCRIPTION fields and creating a package directory}
 \usage{
-rpac_create(pkg_name = "test_package", path = NULL, first = "Super",
-  last = "Duper", email = "super@@duper.com",
-  role = "c(\\"aut\\", \\"cre\\")", lic = "GPL-3", lang = "en-GB",
-  rstudio = TRUE, open = FALSE)
+rpac_create(pkg_name = NULL, path = ".", first = NULL, last = NULL,
+  email = NULL, role = "c(\\"aut\\", \\"cre\\")", lic = "GPL-3",
+  lang = "en-GB", rstudio = TRUE, open = FALSE)
 }
 \arguments{
 \item{pkg_name}{package name as string, field for DESCRIPTION}
@@ -35,13 +34,16 @@ Creates the directory structure in the path provided and adds a GPL3
 licence.
 }
 \description{
-rpac_create() is a wrapper on usethis::create_pacakge(). Passes
+rpac_create() is a wrapper on usethis::create_package(). Passes
 field arguments for DESCRIPTION and creates the directory skeleton for an R
 package. Also creates a GPL3 licence, if you prefer other options run
 usethis::use_*_license().
 }
 \note{
 Choose a good package name! See e.g. <\url{http://r-pkgs.had.co.nz/package.html#naming}>.
+Note that R package names have certain conventions (.e.g it won't accept
+dashes or underscores) but the vignette creation function included here (from
+the usethis package) won't take '.'.
 
 For authorship see for example:
 https://journal.r-project.org/archive/2012-1/RJournal_2012-1_Hornik~et~al.pdf

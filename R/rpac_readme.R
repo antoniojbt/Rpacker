@@ -4,7 +4,7 @@
 #' codecov
 #'
 #' @param github_user Pass as string, will be inserted into
-#' https://github.com/github_user/
+#' "https://github.com/github_user/"
 #' @param pkg_name package name as string
 #' @param path Pass a path as string. Default is current working directory ('.').
 #' @param append Append text to an existing file. Default is TRUE.

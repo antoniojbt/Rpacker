@@ -7,21 +7,19 @@
 rpac_codecov(path = ".", append = TRUE, threshold = "1\%")
 }
 \arguments{
-\item{path}{Pass a path as string. Default is current working directory ('.').}
+\item{path}{Pass a path as string. Default is current working directory '.'}
 
 \item{append}{Append text to an existing file. Default is TRUE.}
 
-\item{threshold}{codecov threshold to pass. Default is 1%.}
+\item{threshold}{codecov threshold to pass. Default is '1\%'.}
 }
 \description{
 rpac_codecov() creates a yaml template for use with covr and
 codecov
 }
 \examples{
-
 \dontrun{
 rpac_codecov()
-
 }
 
 }

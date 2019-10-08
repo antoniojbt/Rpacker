@@ -9,7 +9,7 @@ rpac_readme(github_user = NULL, pkg_name = NULL, path = ".",
 }
 \arguments{
 \item{github_user}{Pass as string, will be inserted into
-https://github.com/github_user/}
+"https://github.com/github_user/"}
 
 \item{pkg_name}{package name as string}
 

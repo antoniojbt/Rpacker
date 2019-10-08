@@ -4,9 +4,8 @@
 \alias{rpac_all_setup}
 \title{Setup templates and directories for an R package}
 \usage{
-rpac_all_setup(pkg_name = "packageTest", path = ".", first = "Super",
-  last = "Duper", email = "super@duper.com", pkgs = "devtools",
-  github_user = "SuperDuper")
+rpac_all_setup(pkg_name = NULL, path = ".", first = NULL,
+  last = NULL, email = NULL, pkgs = NULL, github_user = NULL)
 }
 \arguments{
 \item{pkg_name}{package name as string}
@@ -22,7 +21,7 @@ rpac_all_setup(pkg_name = "packageTest", path = ".", first = "Super",
 \item{pkgs}{Packages to add to DESCRIPTION, pass as string.}
 
 \item{github_user}{Pass as string, will be inserted into
-https://github.com/github_user/}
+"https://github.com/github_user/"}
 }
 \description{
 rpac_all_setup() creates various directories and files to quickly
@@ -36,7 +35,7 @@ GitHub, Travis-CI and Codecov.
 # Travel to parent directory for setup:
 setwd('/somewhere/sensible/like/github_repos/')
 
-# Run lots of functions for quick setup:
+# Quick setup for R package directory structure and several templates:
 rpac_all_setup(pkg_name = 'packageTest',
                path = '.',
                first = "Super",

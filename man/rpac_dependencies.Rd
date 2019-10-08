@@ -13,15 +13,13 @@ rpac_dependencies(pkgs = NULL, type = "Suggests", ...)
 
 \item{...}{Pass any other arguments to use_package()}
 }
-\value{
-
-}
 \description{
 rpac_dependencies() adds packages to load which are dependencies.
 Light wrapper for usethis::use_package()
 }
 \note{
-Prefer 'Suggests' but use 'Imports' if many functions rely on it and you dont'
+Prefer 'Suggests' but use 'Imports' if many functions rely on it and you don't
+provide alternative functions
 }
 \examples{
 

@@ -3,20 +3,17 @@
 #' @description rpac_codecov() creates a yaml template for use with covr and
 #' codecov
 #'
-#' @param path Pass a path as string. Default is current working directory ('.').
+#' @param path Pass a path as string. Default is current working directory '.'
 #' @param append Append text to an existing file. Default is TRUE.
-#' @param threshold codecov threshold to pass. Default is 1%.
+#' @param threshold codecov threshold to pass. Default is '1\%'.
 #'
 #' @author Antonio J Berlanga-Taylor <\url{https://github.com/AntonioJBT/Rpacker}>
-#'
 #'
 #' @seealso <\url{https://codecov.io/}>
 #'
 #' @examples
-#'
 #' \dontrun{
 #' rpac_codecov()
-#'
 #' }
 #'
 #' @export
@@ -27,7 +24,7 @@ rpac_codecov <- function(path = '.',
                          threshold = '1%'
                          ) {
 
-  text_codecov <- sprintf('
+  text_codecov <- sprintf("
 #comment: false
 
 # codecov:
@@ -43,7 +40,7 @@ coverage:
       default:
         target: auto
         threshold: %s
-',
+",
     threshold,
     threshold
   )

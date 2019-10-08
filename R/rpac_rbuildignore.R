@@ -4,7 +4,7 @@
 #'
 #' @param path Pass a path as string. Default is current working directory ('.').
 #' @param append Append text to an existing file. Default is TRUE
-
+#'
 #' @return Creates a .Rbuildignore file in the working directory
 #'
 #' @note Append is false, this will overwrite a file with the same name.

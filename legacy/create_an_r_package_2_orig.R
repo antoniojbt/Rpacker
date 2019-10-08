@@ -72,56 +72,56 @@ text_to_add_functions <- function(function_name = '',
 																	email = NULL
 																	) {
 	if (level == 'long') {
-	sprintf("#' @title The first line is the title
-#'
-#' @description %s() allows you to XXXX
-#'
-#' The 'Usage' section is generated automatically
-#'
-#' params will appear under the 'Arguments' section
-#' @param name description describes the function’s inputs or parameters.
-#' The description should provide a succinct summary of the type of the parameter
-#'  (e.g., string, numeric vector) and, if not obvious from the name, what the
-#'  parameter does.
-#'
-#' @param ... pass any other data.table::fread() parameters
-#'
-#' @return describes the output from the function and appears under
-#' the 'Value' section. Not necessary but useful if your function returns
-#' different types of output depending on the input, or if you’re returning
-#' an S3, S4 or RC object.
-#'
-#' @note if you want to provide further information
-#'
-#' @author %s <\\url{%s}>
+	sprintf("### @title The first line is the title
+###
+### @description %s() allows you to XXXX
+###
+### The 'Usage' section is generated automatically
+###
+### params will appear under the 'Arguments' section
+### @param name description describes the function’s inputs or parameters.
+### The description should provide a succinct summary of the type of the parameter
+###  (e.g., string, numeric vector) and, if not obvious from the name, what the
+###  parameter does.
+###
+### @param ... pass any other data.table::fread() parameters
+###
+### @return describes the output from the function and appears under
+### the 'Value' section. Not necessary but useful if your function returns
+### different types of output depending on the input, or if you’re returning
+### an S3, S4 or RC object.
+###
+### @note if you want to provide further information
+###
+### @author %s <\\url{%s}>
 #\\email{%s}
-#'
-#' @references \\url{XXXX}
-#'
-#' @seealso \\code{\\link{functioname}},
-#' \\code{\\link[packagename]{functioname}}.
-#'
-#' @keywords keyword1 keyword2 ... adds standardised keywords.
-#' Keywords are optional but must be taken from a predefined
-#' list found in file.path(R.home('doc'), 'KEYWORDS').
-#'
-#' @examples provides executable R code showing how to use the function in
-#' practice. Many people look at the examples first.
-#' Example code is run automatically as part of R CMD check.
-#'
-#' Use \\dontrun{code in here} to include code in the example that is not run.
-#' '## Not run:' is added automatically
-#'
-#' You can also pass a script (passed verbatim I think) as:
-#' @example inst/examples/script_with_example.R
-#'
-#' @export Add this if for users, delete if for internal use only
-#'
-#' @importFrom pack func1 func2
-#' Can use this but preferably pass pkg_name::func() instead within function
-#'
-#' @keywords internal keeps documentation but marks the functions as internal
-#' and does not export them
+###
+### @references \\url{XXXX}
+###
+### @seealso \\code{\\link{functioname}},
+### \\code{\\link[packagename]{functioname}}.
+###
+### @keywords keyword1 keyword2 ... adds standardised keywords.
+### Keywords are optional but must be taken from a predefined
+### list found in file.path(R.home('doc'), 'KEYWORDS').
+###
+### @examples provides executable R code showing how to use the function in
+### practice. Many people look at the examples first.
+### Example code is run automatically as part of R CMD check.
+###
+### Use \\dontrun{code in here} to include code in the example that is not run.
+### '## Not run:' is added automatically
+###
+### You can also pass a script (passed verbatim I think) as:
+### @example inst/examples/script_with_example.R
+###
+### @export Add this if for users, delete if for internal use only
+###
+### @importFrom pack func1 func2
+### Can use this but preferably pass pkg_name::func() instead within function
+###
+### @keywords internal keeps documentation but marks the functions as internal
+### and does not export them
 
 %s <- function(param1 = some_default,
                ...
@@ -145,35 +145,35 @@ text_to_add_functions <- function(function_name = '',
 					function_name
 					)
 		} else if (level == 'short') {
-  sprintf("#' @title
-#'
-#' @description %s()
-#'
-#' @param
-#'
-#' @param
-#'
-#' @return
-#'
-#' @note
-#'
-#' @author %s <\\url{%s}>
-#'
-#' @seealso \\code{\\link{functioname}},
-#' \\code{\\link[packagename]{functioname}}.
-#'
-#' @examples
-#'
-#' \\dontrun{
-#'
-#'
-#'
-#' }
-#'
-#' @export
-#'
-#' @importFrom pack func1
-#'
+  sprintf("### @title
+###
+### @description %s()
+###
+### @param
+###
+### @param
+###
+### @return
+###
+### @note
+###
+### @author %s <\\url{%s}>
+###
+### @seealso \\code{\\link{functioname}},
+### \\code{\\link[packagename]{functioname}}.
+###
+### @examples
+###
+### \\dontrun{
+###
+###
+###
+### }
+###
+### @export
+###
+### @importFrom pack func1
+###
 
 %s <- function(param1 = some_default,
                ...

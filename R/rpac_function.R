@@ -6,7 +6,7 @@
 #' @param function_name Function name, used to create file name. Appends '.R'.
 #' @param pkg_name package name as string.
 #' @param author Author name as string.
-# @param url_ref = '' # created with github_user and package
+## param url_ref = '' # created with github_user and package
 #'
 #' @param path Pass a path as string. Default is to place files for functions in
 #' the directory './R'.
@@ -15,9 +15,7 @@
 #'
 #' @param open Open the project in RStudio on creation. Default is TRUE.
 #' @param github_user Pass as string, will be inserted into
-#' https://github.com/github_user/
-#'
-#' @return
+#' "https://github.com/github_user/"
 #'
 #' @note level 'short' is not so short.
 #'

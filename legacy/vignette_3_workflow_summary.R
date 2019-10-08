@@ -2,6 +2,9 @@
 # build, check, install and GitHub
 
 #####
+# Load all functions:
+devtools::load_all()
+
 # Document the package (takes info from DESCRIPTION and functions), use one of:
 # roxygen2::roxygenise()
 # Ctrl + Shift + D # in RStudio
@@ -11,6 +14,9 @@ devtools::document()
 
 # Check spelling:
 devtools::spell_check(use_wordlist = TRUE)
+
+# Test code:
+devtools::test()
 
 # This will modify NAMESPACE, re-run until no errors are shown,
 # then build and install

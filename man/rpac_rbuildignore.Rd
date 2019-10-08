@@ -4,12 +4,12 @@
 \alias{rpac_rbuildignore}
 \title{Creates a .Rbuildignore template file}
 \usage{
-rpac_rbuildignore(path = ".", append = FALSE)
+rpac_rbuildignore(path = ".", append = TRUE)
 }
 \arguments{
 \item{path}{Pass a path as string. Default is current working directory ('.').}
 
-\item{append}{Append text to an existing file. Default is FALSE.}
+\item{append}{Append text to an existing file. Default is TRUE}
 }
 \value{
 Creates a .Rbuildignore file in the working directory

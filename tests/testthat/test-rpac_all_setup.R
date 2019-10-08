@@ -14,16 +14,33 @@ library(usethis) # create packages and functions more easily
 ######################
 
 ######################
+# Setup and teardown functions:
+tmp <- tempdir()
+old_dir <- getwd()
+setup({
+  print('Current directory: ')
+  print(getwd())
+  setwd(tmp)
+  print('Temporary directory: ')
+  print(getwd())
+})
+teardown({
+  setwd(old_dir)
+  print('Current directory: ')
+  print(getwd())
+})
+######################
+
+######################
 # Variables for several functions:
 pkg_name <- 'testPackage'
 first <- "Super"
 last <- "Duper"
 github_user = sprintf("%s_%s", first, last)
 email <- sprintf("%s@@%s.com", first, last)
-pkgs <- c('data.table',
-          'ggplot2',
-          'cowplot',
-          'dplyr'
+pkgs <- c('devtools',
+          'roxygen2',
+          'usethis'
           )
 ######################
 

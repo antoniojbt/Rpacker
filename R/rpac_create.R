@@ -1,6 +1,6 @@
 #' @title Wrapper for passing DESCRIPTION fields and creating a package directory
 #'
-#' @description rpac_create() is a wrapper on usethis::create_pacakge(). Passes
+#' @description rpac_create() is a wrapper on usethis::create_package(). Passes
 #' field arguments for DESCRIPTION and creates the directory skeleton for an R
 #' package. Also creates a GPL3 licence, if you prefer other options run
 #' usethis::use_*_license().
@@ -21,7 +21,7 @@
 #' licence.
 #'
 #' @note Choose a good package name! See e.g. <\url{http://r-pkgs.had.co.nz/package.html#naming}>.
-#' Note that R package names have certain convetions (.e.g it won't accept
+#' Note that R package names have certain conventions (.e.g it won't accept
 #' dashes or underscores) but the vignette creation function included here (from
 #' the usethis package) won't take '.'.
 #'
@@ -79,13 +79,13 @@ if (!requireNamespace('usethis', quietly = TRUE)) {
 
   set_path <- file.path(path, pkg_name)
   person <- sprintf('person(\"%s\", \"%s\",
-                   email = \"%s\",
-                   role = %s
-                   )',
-                   first,
-                   last,
-                   email,
-                   role
+                    email = \"%s\",
+                    role = %s
+                    )',
+                    first,
+                    last,
+                    email,
+                    role
                    )
 
   # Create field and pass as list:

@@ -7,17 +7,14 @@
 #' @param type Type of dependency from use_package(). Default is 'Suggests'
 #' @param ... Pass any other arguments to use_package()
 #'
-#' @return
-#'
-#' @note Prefer 'Suggests' but use 'Imports' if many functions rely on it and you dont'
-  # provide alternative functions
+#' @note Prefer 'Suggests' but use 'Imports' if many functions rely on it and you don't
+#' provide alternative functions
 #'
 #' @author Antonio J Berlanga-Taylor <\url{https://github.com/AntonioJBT/Rpacker}>
 #'
 #' @seealso <\url{http://r-pkgs.had.co.nz/description.html#dependencies}>,
 #' \code{\link[usethis]{use_package}}.
 #'
-#
 #' @examples
 #'
 #' \dontrun{
@@ -32,7 +29,6 @@
 #'
 #' @export
 #'
-
 
 rpac_dependencies <- function(pkgs = NULL,
                               type = 'Suggests',

@@ -10,7 +10,25 @@ library(usethis) # create packages and functions more easily
 
 ######################
 # Working directory for informal tests, should be from pkg/tests/testthat/:
-# setwd("/private/tmp/")
+# setwd("~/Documents/github.dir/AntonioJBT/Rpacker")
+######################
+
+######################
+# Setup and teardown functions:
+tmp <- tempdir()
+old_dir <- getwd()
+setup({
+  print('Current directory: ')
+  print(getwd())
+  setwd(tmp)
+  print('Temporary directory: ')
+  print(getwd())
+})
+teardown({
+  setwd(old_dir)
+  print('Current directory: ')
+  print(getwd())
+})
 ######################
 
 ######################
@@ -19,11 +37,10 @@ pkg_name <- 'testPackage'
 first <- "Super"
 last <- "Duper"
 github_user = sprintf("%s_%s", first, last)
-email <- sprintf("first@@last.com", first, last)
-pkgs <- c('data.table',
-          'ggplot2',
-          'cowplot',
-          'dplyr'
+email <- sprintf("%s@@%s.com", first, last)
+pkgs <- c('devtools',
+          'roxygen2',
+          'usethis'
           )
 ######################
 
@@ -57,7 +74,6 @@ print("Function being tested: rpac_rbuildignore")
 test_that("rpac_rbuildignore", {
   # skip content comparison, just test creation:
   # use just path or fs::path()
-  print(getwd())
   rpac_rbuildignore(append = FALSE)
   expect_equal(file.exists(".Rbuildignore"), TRUE)
   build_file <- readLines('.Rbuildignore')
@@ -73,27 +89,22 @@ print("Function being tested: rpac_dependencies")
 test_that("rpac_dependencies", {
   # skip content comparison, just test creation:
   # use just path or fs::path()
-  pkgs <- c('data.table',
-            'ggplot2',
-            'cowplot',
-            'dplyr'
-            )
   rpac_dependencies(pkgs = pkgs, type = 'Suggests')
   # Testing content here:
   desc_file <- readLines('DESCRIPTION')
   expect_equal(desc_file[1], "Package: testPackage")
-  expect_equal(desc_file[15], "    data.table,")
-  expect_equal(desc_file[16], "    ggplot2,")
-  expect_equal(desc_file[18], "    dplyr")
+  expect_equal(desc_file[15], "    devtools,")
+  expect_equal(desc_file[16], "    roxygen2,")
+  expect_equal(desc_file[17], "    usethis")
 
   # Test type:
-  pkgs <- c('mice',
-            'rlang')
+  pkgs <- c('testthat',
+            'covr')
   rpac_dependencies(pkgs = pkgs, type = 'Imports')
   # Testing content here:
   desc_file <- readLines('DESCRIPTION')
-  expect_equal(desc_file[19], "Imports: ")
-  expect_equal(desc_file[21], "    rlang")
+  expect_equal(desc_file[18], "Imports: ")
+  expect_equal(desc_file[20], "    covr")
   }
   )
 ######################

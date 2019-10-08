@@ -11,7 +11,7 @@
 #' @param last Last author name, string
 #' @param email Author email for CRAN, string
 #' @param github_user Pass as string, will be inserted into
-#' https://github.com/github_user/
+#' "https://github.com/github_user/"
 #' @param pkgs Packages to add to DESCRIPTION, pass as string.
 #'
 # Could add all the arguments later on:
@@ -27,7 +27,7 @@
 #
 # From rpac_codecov():
 # @param threshold codecov threshold to pass. Default is 1%.
-#'
+#
 #' @author Antonio J Berlanga-Taylor <\url{https://github.com/AntonioJBT/Rpacker}>
 #'
 #' @seealso \code{\link{rpac_create}},
@@ -45,11 +45,10 @@
 #' @examples
 #'
 #' \dontrun{
-# setwd('/Users/antoniob/Desktop/Downloads_to_delete/')
 #' # Travel to parent directory for setup:
 #' setwd('/somewhere/sensible/like/github_repos/')
 #'
-#' # Run lots of functions for quick setup:
+#' # Quick setup for R package directory structure and several templates:
 #' rpac_all_setup(pkg_name = 'packageTest',
 #'                path = '.',
 #'                first = "Super",
