@@ -72,10 +72,9 @@ r_packages:
     - devtools
     - roxygen2
     - usethis
-
-r_binary_packages:
-    - testthat
+    - rmarkdown
     - knitr
+    - testthat
 
 after_success:
     - Rscript -e 'library(covr); covr::codecov()'
