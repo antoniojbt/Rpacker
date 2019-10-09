@@ -82,4 +82,3 @@ r_packages:
 
 after_success:
     - Rscript -e 'library(covr); covr::codecov()'
-
