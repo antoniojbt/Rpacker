@@ -42,7 +42,7 @@ matrix:
     env:
       - VDIFFR_RUN_TESTS=false
       - _R_CHECK_SYSTEM_CLOCK_=false
-#  allow_failures: # getting warnings and cannot download on several osx
+  allow_failures: # getting warnings and cannot download on several osx
                   # also set vdiffr to false on all
   - r: devel
     os: osx
@@ -50,21 +50,25 @@ matrix:
     env:
       - VDIFFR_RUN_TESTS=false
       - _R_CHECK_SYSTEM_CLOCK_=false
+      - TEST_GROUP=canFail
   - r: release
     os: osx
     env:
       - VDIFFR_RUN_TESTS=false
       - _R_CHECK_SYSTEM_CLOCK_=false
+     - TEST_GROUP=canFail
   - r: 3.6
     os: osx
     env:
       - VDIFFR_RUN_TESTS=false
       - _R_CHECK_SYSTEM_CLOCK_=false
+      - TEST_GROUP=canFail
   - r: 3.5
     os: osx
     env:
       - VDIFFR_RUN_TESTS=false
       - _R_CHECK_SYSTEM_CLOCK_=false
+      - TEST_GROUP=canFail
 
 r_packages:
     - covr
