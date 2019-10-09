@@ -57,7 +57,7 @@ url_ref <- sprintf('https://github.com/%s/%s', github_user, pkg_name)
 #####
 # tests for functions
 
-rpac_function(function_name = 'rpac_test',
+rpac_function(function_name = 'rpac_vignette2', #'rpac_test',
               pkg_name = 'Rpacker',
               path = 'R',
               author = 'Antonio J. Berlanga-Taylor',

@@ -104,7 +104,7 @@ if (!requireNamespace('usethis', quietly = TRUE)) {
   # Generate GPL3 licence:
   author <- sprintf('%s %s', first, last)
   setwd(sprintf('%s/%s', getwd(), pkg_name))
-  message(sprintf('Change directories to %s', getwd()))
+  message(sprintf('Changed directories to %s', getwd()))
   usethis::use_gpl3_license(name = author) # run once
 
   }
