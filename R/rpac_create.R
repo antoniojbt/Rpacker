@@ -13,7 +13,7 @@
 #' @param role , field for DESCRIPTION. Default 'c("aut", "cre")'
 #' @param lic LICENCE to use. Hardcoded to GPL-3, field for DESCRIPTION only.
 #' @param lang Field for language, field for DESCRIPTION. Default is "en-GB"
-#' @param rstudio Creates an RStudio project. Default is TRUE
+#' @param rstudio Creates an RStudio project. Default is FALSE
 #' @param open Open the project in RStudio on creation. Default is FALSE
 # @param ... Pass any other variables to usethis::create_package()
 #'
@@ -68,7 +68,7 @@ rpac_create <- function(pkg_name = NULL,
                         role = 'c("aut", "cre")',
                         lic = "GPL-3",
                         lang = "en-GB",
-                        rstudio = TRUE,
+                        rstudio = FALSE,
                         open = FALSE
                         ) {
 # Use this instead or library or require inside functions:
