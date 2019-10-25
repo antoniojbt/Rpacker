@@ -15,17 +15,21 @@ library(usethis) # create packages and functions more easily
 
 ######################
 # Setup and teardown functions:
-tmp <- tempdir()
+# tempdir() creates a single directory per session, so create sub-directories:
+tmp1 <- file.path(tempdir(), "pack_creation")
+dir.create(tmp1)
 old_dir <- getwd()
 setup({
   print('Current directory: ')
   print(getwd())
-  setwd(tmp)
+  setwd(tmp1)
   print('Temporary directory: ')
   print(getwd())
 })
 teardown({
   setwd(old_dir)
+  # unlink(tmp1, recursive = TRUE)
+  # dir.exists(tmp1)
   print('Current directory: ')
   print(getwd())
 })
@@ -43,6 +47,11 @@ pkgs <- c('devtools',
           'usethis'
           )
 test_name <- 'file_templates'
+role <- 'c("aut", "cre")'
+lang <- "en-GB"
+lic <- "GPL-3"
+rstudio <- FALSE
+open <- FALSE
 ######################
 
 ######################
@@ -51,20 +60,24 @@ print("Function being tested: rpac_create")
 test_that("rpac_create", {
   # skip content comparison, just test creation:
   # use just path or fs::path()
-  print(getwd())
-  rpac_create(pkg_name = pkg_name,
+  # print(getwd())
+  rpac_create(path = pkg_name,
               # path = '.',
               first = first,
               last = last,
               email = email,
-              role = 'c("aut", "cre")',
-              lang = "en-GB"
+              role = role,
+              lang = lang,
+              lic = lic,
+              rstudio = rstudio,
+              open = open
               )
+
   expect_equal(dir.exists("R"), TRUE)
   expect_equal(file.exists("DESCRIPTION"), TRUE)
   expect_equal(file.exists("NAMESPACE"), TRUE)
   expect_equal(file.exists("LICENSE.md"), TRUE)
-  expect_equal(file.exists("testPackage.Rproj"), TRUE)
+  # expect_equal(file.exists("testPackage.Rproj"), TRUE)
   }
   )
 ######################
@@ -117,7 +130,7 @@ test_that("rpac_dependencies", {
   # This will shift lines in DESCRIPTION (adds testthat) so test above would fail
   # if re-running. This is just to get the full setup, only uses a usethis
   # function:
-  usethis::use_testthat()
+  expect_warning(usethis::use_testthat())
   expect_equal(dir.exists("tests"), TRUE)
   expect_equal(dir.exists("tests/testthat/"), TRUE)
   expect_equal(file.exists("tests/testthat.R"), TRUE)
@@ -221,10 +234,10 @@ test_that("rpac_function", {
   rpac_function(function_name = 'rpac_func_short',
                 pkg_name = pkg_name,
                 path = 'R',
-                author = 'Antonio',
+                author = first,
                 github_user = github_user,
                 level = 'short',
-                open = FALSE
+                open = open
                 )
   expect_equal(file.exists('R/rpac_func_short.R'), TRUE)
   # Testing content here:

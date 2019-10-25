@@ -88,8 +88,7 @@ rpac_all_setup <- function(pkg_name = NULL,
   }
 
   # Create basic skeleton:
-  rpac_create(pkg_name = pkg_name,
-              path = path,
+  rpac_create(path = pkg_name, #usethis::create_package uses path as name
               first = first,
               last = last,
               email = email
@@ -129,8 +128,7 @@ rpac_all_setup <- function(pkg_name = NULL,
   # package-level documentation.
 
   # Create a vignette template:
-  usethis::use_vignette(name = sprintf('introduction_%s', pkg_name)
-                        )
+  usethis::use_vignette(name = sprintf('introduction_%s', pkg_name))
 
   message(sprintf('Done creating templates and folders for the package %s', pkg_name))
   message(sprintf('Files were created in %s', getwd()))
