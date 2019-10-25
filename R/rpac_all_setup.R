@@ -22,7 +22,7 @@
 # @param role , field for DESCRIPTION. Default 'c("aut", "cre")'
 # @param lic LICENCE to use. Hardcoded to GPL-3, field for DESCRIPTION only.
 # @param lang Field for language, field for DESCRIPTION. Default is "en-GB"
-# @param rstudio Creates an RStudio project. Default is TRUE
+# @param rstudio Creates an RStudio project. Default is FALSE
 # @param open Open the project in RStudio on creation. Default is FALSE
 #
 # From rpac_codecov():
