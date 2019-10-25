@@ -102,6 +102,7 @@ rpac_function <- function(function_name = NULL,
     }
 
 
+#' @keywords internal
 # internal
 # Create the text needed:
 text_to_add_functions <- function(function_name = NULL,
@@ -149,7 +150,8 @@ text_to_add_functions <- function(function_name = NULL,
 ###@references \\url{XXXX}
 ###
 ###@seealso \\code{\\link{functioname}},
-###\\code{\\link[packagename]{functioname}}.
+###\\code{\\link[packagename]{functioname}},
+###\\href{http://rstudio.com}{Rstudio}.
 ###
 ###@keywords keyword1 keyword2 ... adds standardised keywords.
 ###Keywords are optional but must be taken from a predefined
@@ -210,7 +212,8 @@ text_to_add_functions <- function(function_name = NULL,
 ###@author %s <\\url{%s}>
 ###
 ###@seealso \\code{\\link{functioname}},
-###\\code{\\link[packagename]{functioname}}.
+###\\code{\\link[packagename]{functioname}},
+###\\href{http://rstudio.com}{Rstudio}.
 ###
 ###@examples
 ###

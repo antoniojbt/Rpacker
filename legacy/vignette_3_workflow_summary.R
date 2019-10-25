@@ -4,6 +4,15 @@
 # See cheatsheet devtools:
 # https://rawgit.com/rstudio/cheatsheets/master/package-development.pdf
 
+# # Check session is clean:
+# getwd()
+# ls()
+# rm(list = ls())
+# # Restart R if needed:
+# .rs.restartR()
+# setwd('~/Documents/github.dir/AntonioJBT/Rpacker')
+# getwd()
+
 # [devtools workflow](https://devtools.r-lib.org/)
 # And follow the devtools workflow:
 devtools::load_all() # Load all functions in 'R/'
