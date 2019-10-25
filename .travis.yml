@@ -56,7 +56,7 @@ matrix:
     env:
       - VDIFFR_RUN_TESTS=false
       - _R_CHECK_SYSTEM_CLOCK_=false
-     - TEST_GROUP=canFail
+      - TEST_GROUP=canFail
   - r: 3.6
     os: osx
     env:
