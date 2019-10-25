@@ -137,3 +137,19 @@ testthat::test_that("epi_plots_to_grid", {
 # https://svn.r-project.org/R/trunk/tests/reg-plot.R
 # https://svn.r-project.org/R/trunk/tests/Makefile.common
 #####
+
+#####
+# Create temporary directories for testing:
+tmp <- tempdir()
+setwd(tmp)
+getwd()
+test1 <- 'test.pack.1'
+test2 <- 'test.pack.2'
+usethis::create_package(path = test1, rstudio = TRUE, open = FALSE)
+usethis::create_package(path = test2, rstudio = TRUE, open = FALSE)
+unlink(file.path(tmp, test1), recursive = TRUE)
+unlink(file.path(tmp, test2), recursive = TRUE)
+dir.exists(file.path(tmp, test1))
+dir.exists(file.path(tmp, test2))
+dir()
+#####

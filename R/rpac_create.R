@@ -5,8 +5,8 @@
 #' package. Also creates a GPL3 licence, if you prefer other options run
 #' usethis::use_*_license().
 #'
-#' @param pkg_name package name as string, field for DESCRIPTION
-#' @param path directory path as string, field for DESCRIPTION
+# @param pkg_name package name as string, field for DESCRIPTION
+#' @param path path as string, field for DESCRIPTION
 #' @param first First author name, field for DESCRIPTION
 #' @param last Last author name, field for DESCRIPTION
 #' @param email Author email for CRAN, field for DESCRIPTION
@@ -20,7 +20,9 @@
 #' @return Creates the directory structure in the path provided and adds a GPL3
 #' licence.
 #'
-#' @note Choose a good package name! See e.g. <\url{http://r-pkgs.had.co.nz/package.html#naming}>.
+#' @note path is usually the package name and passed to usethis::create_package.
+#' Choose a good name! See e.g.
+#' <\href{http://r-pkgs.had.co.nz/package.html#naming}{package naming}>.
 #' Note that R package names have certain conventions (.e.g it won't accept
 #' dashes or underscores) but the vignette creation function included here (from
 #' the usethis package) won't take '.'.
@@ -45,8 +47,7 @@
 #' @examples
 #'
 #' \dontrun{
-#' rpac_create(pkg_name = 'testPackage',
-#'             path = '.',
+#' rpac_create(path = 'testPackage',
 #'             first = "Super",
 #'             last = "Duper",
 #'             email = "super@duper.com",
@@ -60,8 +61,7 @@
 #' @export
 #'
 
-rpac_create <- function(pkg_name = NULL,
-                        path = '.',
+rpac_create <- function(path = NULL,
                         first = NULL,
                         last = NULL,
                         email = NULL,
@@ -69,7 +69,7 @@ rpac_create <- function(pkg_name = NULL,
                         lic = "GPL-3",
                         lang = "en-GB",
                         rstudio = FALSE,
-                        open = FALSE
+                        open = FALSE # open with RStudio
                         ) {
 # Use this instead or library or require inside functions:
 if (!requireNamespace('usethis', quietly = TRUE)) {
@@ -77,7 +77,6 @@ if (!requireNamespace('usethis', quietly = TRUE)) {
   call. = FALSE)
   }
 
-  set_path <- file.path(path, pkg_name)
   person <- sprintf('person(\"%s\", \"%s\",
                     email = \"%s\",
                     role = %s
@@ -96,15 +95,14 @@ if (!requireNamespace('usethis', quietly = TRUE)) {
 
   # Create a package, run once:
   usethis::create_package(fields = desc_fields,
-                          path = set_path,
-                          rstudio = TRUE,
-                          open = FALSE # don't open with RStudio
+                          path = path,
+                          rstudio = rstudio,
+                          open = open
                           )
 
   # Generate GPL3 licence:
   author <- sprintf('%s %s', first, last)
-  setwd(sprintf('%s/%s', getwd(), pkg_name))
+  setwd(file.path(getwd(), path))
   message(sprintf('Changed directories to %s', getwd()))
   usethis::use_gpl3_license(name = author) # run once
-
   }
