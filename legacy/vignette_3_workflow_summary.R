@@ -110,6 +110,12 @@ devtools::check()
 #####
 
 #####
+# Reverse dependency checking:
+# https://github.com/r-lib/revdepcheck
+#
+#####
+
+#####
 # Upload to CRAN if checks pass
 # CRAN checks are partly manual, make it easy for them
 # Update cran-comments.md DESCRIPTION, author email, etc. etc.
