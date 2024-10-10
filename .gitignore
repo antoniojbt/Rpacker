@@ -1,6 +1,5 @@
 .Rproj.user
 
-
 # R files to ignore
 # History files
 .Rhistory
@@ -37,6 +36,8 @@ inst/doc
 *.dir_bash_history
 .DS_Store
 .ipynb_checkpoints
+*.icloud
+
 # Vim:
 *~
 *.swp
