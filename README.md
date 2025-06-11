@@ -1,4 +1,4 @@
-[![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
+[![Project Status: Suspended – Initial development has started, but there has not yet been a stable, usable release; work has been stopped for the time being but the author(s) intend on resuming work.](https://www.repostatus.org/badges/latest/suspended.svg)](https://www.repostatus.org/#suspended)
 [![R](https://github.com/antoniojbt/Rpacker/actions/workflows/r-cmd-check.yml/badge.svg)](https://github.com/antoniojbt/Rpacker/actions/workflows/r-cmd-check.yml)
 [![codecov](https://codecov.io/gh/AntonioJBT/Rpacker/graph/badge.svg?token=W2zjyBsgJA)](https://codecov.io/gh/AntonioJBT/Rpacker)
 
