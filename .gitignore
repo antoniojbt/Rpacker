@@ -1,44 +1,67 @@
-.Rproj.user
-
-# R files to ignore
+# R files to ignore:
 # History files
 .Rhistory
 .Rapp.history
 inst/doc
-
 # Session Data files
 .RData
-
 # Output files from R CMD check
 /*.Rcheck/
-
 # RStudio files
 .Rproj.user/
 *.Rproj
 
-# Knitr and temporary files created by R markdown
-*.utf8.md
-*.knit.md
-/*_cache/
-/cache/
-
 # produced vignettes
 #vignettes/*.html
 #vignettes/*.pdf
-
 # OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
 .httr-oauth
+# knitr and R markdown default cache directories
+/*_cache/
+/cache/
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+.Rproj.user
 
 # Mac OS X and others:
 *.tar
 *.gz
 .dir_bash_history
 *.dir_bash_history
+*/*.dir_bash_history
+*/*/*.dir_bash_history
+*/*/*/*.dir_bash_history
+
 .DS_Store
 .ipynb_checkpoints
-*.icloud
-
 # Vim:
 *~
 *.swp
-
+# Compiled python modules:
+*.pyc
+# Ptyhon packaging, setuptools, eggs, etc.:
+MANIFEST
+PKG-INFO
+*.egg-info
+__pycache__
+*.egg
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+# Sphinx:
+docs/_build
+docs/_static
+docs/_templates
+doc
+Meta
+/doc/
+/Meta/
