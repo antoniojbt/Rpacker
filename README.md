@@ -1,7 +1,6 @@
 [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
-[![Travis build status](https://travis-ci.org/AntonioJBT/Rpacker.svg?branch=master)](https://travis-ci.org/AntonioJBT/Rpacker)
-[![codecov](https://codecov.io/gh/AntonioJBT/Rpacker/branch/master/graph/badge.svg)](https://codecov.io/gh/AntonioJBT/Rpacker)
-
+[![R](https://github.com/antoniojbt/Rpacker/actions/workflows/r-cmd-check.yml/badge.svg)](https://github.com/antoniojbt/Rpacker/actions/workflows/r-cmd-check.yml)
+[![codecov](https://codecov.io/gh/AntonioJBT/Rpacker/graph/badge.svg?token=W2zjyBsgJA)](https://codecov.io/gh/AntonioJBT/Rpacker)
 
 # Rpacker
 
