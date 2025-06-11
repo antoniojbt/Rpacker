@@ -34,11 +34,10 @@ rpac_vignette <- function(pkg_name = NULL,
          call. = FALSE)
   }
   title = sprintf('%s.Rmd', title)
-  vign_text <- c(sprintf("%s", title)
+  vign_text <- c(sprintf("%s", title))
   usethis::use_vignette(sprintf('%s', title))
   pkgs <- c('knitr',
             'rmarkdown',
             )
   Rpacker::rpac_dependencies(pkgs = pkgs, type = 'Suggests')
-
   }

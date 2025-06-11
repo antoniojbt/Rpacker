@@ -70,7 +70,6 @@ jobs:
             any::covr
             any::lintr
             any::styler
-            any::renv
           #  any::pkgdown
           needs: check
 

@@ -13,6 +13,9 @@
 # setwd('~/Documents/github.dir/AntonioJBT/Rpacker')
 # getwd()
 
+
+library(devtools)
+
 # [devtools workflow](https://devtools.r-lib.org/)
 # And follow the devtools workflow:
 devtools::load_all() # Load all functions in 'R/'
